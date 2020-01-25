@@ -2,22 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\HaveVideo;
+use App\Models\SearchVideo;
 use Illuminate\Support\Facades\DB;
 
-class HaveVideoController extends Controller
+class SearchVideoController extends Controller
 {
     public function index()
     {
-        $products = HaveVideo::all();
-        return view('HaveVideo')->with(['products' => $products]);
+        $products = SearchVideo::all();
+        return view('SearchVideo')->with(['products' => $products]);
 
     }
 
 
     public function video($slug)
     {
-        $video = HaveVideo::where('slug', 'like', $slug)->first();
+        $video = SearchVideo::where('slug', 'like', $slug)->first();
         $photo = DB::table('media_libs')->where('have_videos_id', $video->id)->get();
         return view('ShowHaveVideo')->with(['video' => $video, 'photo' => $photo]);
     }

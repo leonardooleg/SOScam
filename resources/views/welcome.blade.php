@@ -1,99 +1,473 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts\app')
 
-        <title>Laravel</title>
+@section('content')
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" type="text/css" href="/css/stylesheets/bootstrap.css">
 
-            .full-height {
-                height: 100vh;
-            }
+    <!-- Theme Style -->
+    <link rel="stylesheet" type="text/css" href="/css/stylesheets/style.css">
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+    <!-- Responsive -->
+    <link rel="stylesheet" type="text/css" href="/css/stylesheets/responsive.css">
 
-            .position-ref {
-                position: relative;
-            }
+    <!-- REVOLUTION LAYERS STYLES -->
+    <link rel="stylesheet" type="text/css" href="/revolution/css/layers.css">
+    <link rel="stylesheet" type="text/css" href="/revolution/css/settings.css">
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
+    <!-- Animation Style -->
+    <link rel="stylesheet" type="text/css" href="/css/stylesheets/animate.css">
 
-            .content {
-                text-align: center;
-            }
+    <!-- Favicon and touch icons  -->
+    <link href="/icon/apple-touch-icon-48-precomposed.png" rel="apple-touch-icon-precomposed" sizes="48x48">
+    <link href="/icon/apple-touch-icon-32-precomposed.png" rel="apple-touch-icon-precomposed">
+    <link href="/icon/favicon.png" rel="shortcut icon">
 
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
     </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
+    <body class="header_sticky">
+    <!-- Preloader -->
+    <section class="loading-overlay">
+        <div class="Loading-Page">
+            <h2 class="loader">Loading</h2>
+        </div>
+    </section>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
+    <!-- Boxed -->
+    <div class="boxed">
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
+        <!-- Header -->
+        @include('layouts.HeadMenu')
+        <div id="rev_slider_1078_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container"
+             data-alias="classic4export" data-source="gallery"
+             style="margin:0px auto;background-color:transparent;padding:0px;margin-top:0px;margin-bottom:0px;">
+            <!-- START REVOLUTION SLIDER 5.3.0.2 auto mode -->
+            <div id="rev_slider_1078_1" class="rev_slider fullwidthabanner" style="display:none;"
+                 data-version="5.3.0.2">
+                <div class="slotholder"></div>
+                <ul><!-- SLIDE  -->
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <!-- SLIDE 1 -->
+                    <li data-index="rs-3050" data-transition="slideremovedown" data-slotamount="7"
+                        data-hideafterloop="0" data-hideslideonmobile="off" data-easein="Power4.easeInOut"
+                        data-easeout="Power4.easeInOut" data-masterspeed="2000" data-rotate="0"
+                        data-saveperformance="off" data-title="Ken Burns" data-param1="" data-param2="" data-param3=""
+                        data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9=""
+                        data-param10="" data-description="">
+
+                        <!-- MAIN IMAGE -->
+                        <img src="images/slides/1.jpg" alt="" data-bgposition="center center" data-kenburns="off"
+                             data-duration="30000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120"
+                             data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0"
+                             data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                        <!-- LAYERS -->
+
+                        <!-- LAYER NR. 12 -->
+                        <div class="tp-caption title-slide"
+                             id="slide-3050-layer-1"
+                             data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                             data-y="['middle','middle','middle','middle']" data-voffset="['-128','-128','-128','-50']"
+                             data-fontsize="['65','65','45','30']"
+                             data-lineheight="['65','65','45','35']"
+                             data-fontweight="['600','600','600','600']"
+                             data-width="none"
+                             data-height="none"
+                             data-whitespace="nowrap"
+
+                             data-type="text"
+                             data-responsive_offset="on"
+
+                             data-frames='[{"delay":1000,"speed":2000,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+
+                             data-textAlign="['center','center','center','center']"
+                             data-paddingtop="[10,10,10,10]"
+                             data-paddingright="[0,0,0,0]"
+                             data-paddingbottom="[0,0,0,0"
+                             data-paddingleft="[0,0,0,0]"
+
+                             style="z-index: 16; white-space: nowrap;">Допоможемо знайти відео ДТП
+                        </div>
+
+                        <!-- LAYER NR. 13 -->
+                        <div class="tp-caption sub-title"
+                             id="slide-3050-layer-4"
+                             data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                             data-y="['middle','middle','middle','middle']" data-voffset="['-32','-32','-32','20']"
+                             data-fontsize="['20',20','20','14']"
+                             data-lineheight="['35','35','35','20']"
+                             data-fontweight="['300','300','300','300']"
+                             data-width="['1200','660','660','350']"
+                             data-height="none"
+                             data-whitespace="['nowrap',normal','normal','normal']"
+
+                             data-type="text"
+                             data-responsive_offset="on"
+
+                             data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":2000,"to":"o:1;","delay":1500,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+                             data-textAlign="['center','center','center','center']"
+                             data-paddingtop="[0,0,0,0]"
+                             data-paddingright="[0,0,0,0]"
+                             data-paddingbottom="[0,0,0,0]"
+                             data-paddingleft="[0,0,0,0]"
+
+                             style="z-index: 17; white-space: nowrap;">Знайдіть очевидців ДТП <span>в один клік. </span>
+                            Укажіть місце і час дорожньо-транспортної пригоди, <br> і очевидці зможуть поділитись з вами
+                            своїми фото та відео ДТП
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div><!-- END REVOLUTION SLIDER -->
+
+        <div class="container">
+            <div class="wrap-form">
+                <div class="flat-formsearch ">
+                    <form novalidate="" class="search-form form-filter clearfix" id="searchform" method="post"
+                          action="#">
+                <span class="input-question">
+                    <input type="text" placeholder="Укажіть місце" name="question" id="question">
+                </span>
+                        <span class="input-location">
+                    <input type="text" placeholder="Радіус" name="location" id="location">
+                    <span class="filter">
+                        <input id="ex8" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="10"
+                               data-slider-step="1" data-slider-value="5"/>
+                    </span>
+                </span>
+                        <span class="select">
+                    <select>
+                        <option>Всі відео</option>
+                        <option>Очевидець ДТП</option>
+                        <option>Шукають ДТП</option>
+                    </select>
+                </span>
+                        <span class="form-submit text-right">
+                    <button class="flat-button">Пошук <i class="ion-ios-search-strong"></i></button>
+                </span>
+                    </form>
                 </div>
             </div>
         </div>
+
+        <section class="flat-row section-client">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="title-section text-center">
+                            <h1 class="title">Категорії</h1>
+                            <div class="sub-title">
+                                Що вас цікавить
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="flat-client" data-item="4" data-nav="true" data-dots="false" data-auto="false">
+                            <a href="/have-video" title="">
+                                <div class="client">
+                                    <div class="featured-client">
+                                        <img src="images/clients/1.jpg" alt="image">
+                                    </div>
+                                    <div class="content-client clearfix">
+                                        <div class="icon">
+                                            <img src="images/clients/icon1.png" alt="image">
+                                        </div>
+                                        <div class="text">
+                                            <h6>Я очевидець ДТП</h6>
+                                            <p>45 матеріалів</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="/search-video" title="">
+                                <div class="client">
+                                    <div class="featured-client">
+                                        <img src="images/clients/2.jpg" alt="image">
+                                    </div>
+                                    <div class="content-client clearfix">
+                                        <div class="icon">
+                                            <img src="images/clients/icon2.png" alt="image">
+                                        </div>
+                                        <div class="text">
+                                            <h6>Домоможіть знайти</h6>
+                                            <p>45 запросів</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="client">
+                                <div class="featured-client">
+                                    <img src="images/clients/3.jpg" alt="image">
+                                </div>
+                                <div class="content-client clearfix">
+                                    <div class="icon">
+                                        <img src="images/clients/icon3.png" alt="image">
+                                    </div>
+                                    <div class="text">
+                                        <h6><a href="#" title="">Як розістити прохання про допомогу</a></h6>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="client">
+                                <div class="featured-client">
+                                    <img src="images/clients/1.jpg" alt="image">
+                                </div>
+                                <div class="content-client clearfix">
+                                    <div class="icon">
+                                        <img src="images/clients/icon4.png" alt="image">
+                                    </div>
+                                    <div class="text">
+                                        <h6><a href="#" title="">Про сайт</a></h6>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.flat-client -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="flat-row section-product bg-theme">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="title-section text-center">
+                            <h1 class="title">Найбільш популярні дорожні пригоди</h1>
+                            <div class="sub-title">
+                                Популярні дорожньо-транспортні пригоди за останній час
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="wrap-flat-product clearfix col-md-12">
+                        @foreach($products as $product)
+                            <div class="flat-product">
+                                <div class="featured-product">
+                                    <img src="images/services/1.jpg" alt="image">
+                                    <div class="time bg-green">
+                                        Топ відео
+                                    </div>
+                                    <div class="rate-product">
+                                        <div class="link-review clearfix">
+                                            <div class="button-product float-left">
+                                                <button type="button" class="flat-button" onclick="location.href='#'">
+                                                    bar & coffe
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="info-product">
+                                            <h6 class="title"><a
+                                                    href="/have-video/{{$product->slug}}">{{$product->title}}</a></h6>
+                                            <p>{{$product->maps}}</p>
+                                            <a href="#" class="heart">
+                                                <i class="ion-android-favorite-outline"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="content-product">
+                                    <div class="tm">
+                                        TM
+                                    </div>
+                                    <div class="text">
+                                        <p>{{$product->description_short}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="load-more text-center col-md-12">
+                        <a href="/have-video">
+                            <button type="button" class="flat-button">Переглянути більше</button>
+                        </a>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+
+        <section class="flat-row section-download parallax parallax2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <div class="flat-counter">
+                            <span class="over">Over</span>
+                            <div class="content-counter">
+                                <div class="numb-count" data-to="1512999" data-speed="1000"
+                                     data-waypoint-active="yes">1,512,999</div>
+                            </div>
+                            <span class="download">Downloads</span>
+                        </div>
+                        <p>Yes, this is real Our application is already available for android and ios only with a touch
+                            you will <br>easily find what do you want</p>
+                        <div class="flat-download">
+                            <button type="button" class="flat-button" onclick="location.href='#'"><i
+                                    class="ion-social-android"></i>Download for Android
+                            </button>
+                            <button type="button" class="flat-button" onclick="location.href='#'"><i
+                                    class="ion-social-apple"></i>Download for Apple
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="flat-row blog-shortcode">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="title-section style2">
+                            <h1 class="title">Latest News</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6">
+                        <article class="post clearfix">
+                            <div class="featured-post">
+                                <a href="blog-single.html"><img src="images/blog/s1.jpg" alt="image"></a>
+                                <ul class="post-comment">
+                                    <li class="date">
+                                        27
+                                    </li>
+                                    <li class="month">
+                                        AUG
+                                    </li>
+                                </ul>
+                            </div><!-- /.feature-post -->
+                            <div class="content-post">
+                                <ul class="meta-data clearfix">
+                                    <li class="category">
+                                        Posted in: <a href="#">Restaurant, </a><a href="#">Hotel</a>
+                                    </li>
+                                    <li> by: <a href="#">admin</a></li>
+                                </ul><!-- /.meta-post -->
+                                <h3 class="title-post"><a href="blog-single.html">
+                                        Top 10 French restaurants
+                                    </a></h3>
+                                <p>Sed ut perspiciatis unde omnis iste error sit luptatem accusantium doloremque lau
+                                    dantium, </p>
+                                <div class="more-link">
+                                    <a href="blog-single.html">Read More</a>
+                                </div>
+                            </div><!-- /.content-post -->
+                        </article>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <article class="post clearfix">
+                            <div class="featured-post">
+                                <a href="blog-single.html"><img src="images/blog/s2.jpg" alt="image"></a>
+                                <ul class="post-comment">
+                                    <li class="date">
+                                        21
+                                    </li>
+                                    <li class="month">
+                                        DEC
+                                    </li>
+                                </ul>
+                            </div><!-- /.feature-post -->
+                            <div class="content-post">
+                                <ul class="meta-data clearfix">
+                                    <li class="category">
+                                        Posted in: <a href="#">Restaurant, </a><a href="#">Hotel</a>
+                                    </li>
+                                    <li> by: <a href="#">admin</a></li>
+                                </ul><!-- /.meta-post -->
+                                <h3 class="title-post"><a href="blog-single.html">
+                                        6 Tips to retain your top sales talent
+                                    </a></h3>
+                                <p>Sed ut perspiciatis unde omnis iste error sit luptatem accusantium doloremque lau
+                                    dantium, </p>
+                                <div class="more-link">
+                                    <a href="blog-single.html">Read More</a>
+                                </div>
+                            </div><!-- /.content-post -->
+                        </article>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <article class="post clearfix">
+                            <div class="featured-post">
+                                <a href="blog-single.html"><img src="images/blog/s3.jpg" alt="image"></a>
+                                <ul class="post-comment">
+                                    <li class="date">
+                                        18
+                                    </li>
+                                    <li class="month">
+                                        JUN
+                                    </li>
+                                </ul>
+                            </div><!-- /.feature-post -->
+                            <div class="content-post">
+                                <ul class="meta-data clearfix">
+                                    <li class="category">
+                                        Posted in: <a href="#">Restaurant, </a><a href="#">Hotel</a>
+                                    </li>
+                                    <li> by: <a href="#">admin</a></li>
+                                </ul><!-- /.meta-post -->
+                                <h3 class="title-post"><a href="blog-single.html">
+                                        Top 10 French restaurants
+                                    </a></h3>
+                                <p>Sed ut perspiciatis unde omnis iste error sit luptatem accusantium doloremque lau
+                                    dantium, </p>
+                                <div class="more-link">
+                                    <a href="blog-single.html">Read More</a>
+                                </div>
+                            </div><!-- /.content-post -->
+                        </article>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        @include('layouts.newsletter')
+        @include('layouts.footer')
+
+
+        <script src="/javascript/jquery.min.js"></script>
+        <script src="/javascript/tether.min.js"></script>
+        <script src="/javascript/bootstrap.min.js"></script>
+        <script src="/javascript/jquery.easing.js"></script>
+        <script src="/javascript/jquery-waypoints.js"></script>
+        <script src="/javascript/jquery-countTo.js"></script>
+        <script src="/javascript/owl.carousel.js"></script>
+        <script src="/javascript/jquery.cookie.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+        <script src="/javascript/parallax.js"></script>
+        <script src="/javascript/bootstrap-slider.min.js"></script>
+        <script src="/javascript/smoothscroll.js"></script>
+
+        <script src="/javascript/main.js"></script>
+
+        <!-- Revolution Slider -->
+        <script src="/revolution/js/jquery.themepunch.tools.min.js"></script>
+        <script src="/revolution/js/jquery.themepunch.revolution.min.js"></script>
+        <script src="/revolution/js/slider.js"></script>
+
+        <!-- SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading) -->
+        <script src="/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+        <script src="/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
+        <script src="/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+        <script src="/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+        <script src="/revolution/js/extensions/revolution.extension.migration.min.js"></script>
+        <script src="/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+        <script src="/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+        <script src="/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+        <script src="/revolution/js/extensions/revolution.extension.video.min.js"></script>
+
     </body>
-</html>
+    </html>
+
+
+@endsection
