@@ -2933,3 +2933,12 @@ img.head_have_photo {
 }
 
 /*MY*/
+/*Google maps*/
+/* Always set the map height explicitly to define the size of the div
+ * element that contains the map. */
+#map {
+    height: 256px;
+}
+
+
+/*Google maps*/

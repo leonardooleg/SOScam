@@ -2,39 +2,52 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d93835aa-b4ea-417f-94e3-6120bf019319" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/laravel-plugin.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/SOSController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/SearchVideoController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/SearchVideo.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/HaveVideo.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/SearchVideo.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/ShowHaveVideo.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/ShowSearchVideo.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/add/SOScam.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/add/haveSOScam.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/greeting.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/HeadMenu.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade3.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/footer.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/newsletter.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/DashboardController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/HaveVideoController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/OrdersController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/TextileableController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/TextilesController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserManagment/UserController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/dashboard.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/form.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/categories/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/categories/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/categories/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/categories/partials/categories.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/categories/partials/form.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/components/breadcrumb.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/have-video/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/have-video/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/have-video/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/have-video/partials/form.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/have-video/partials/textiles.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/layouts/app_admin.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/orders/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/orders/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/orders/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/orders/partials/categories.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/orders/partials/form.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/textiles/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/textiles/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/textiles/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/user_managment/users/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/user_managment/users/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/user_managment/users/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/user_managment/users/partials/form.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HaveVideoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HaveVideoController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Models/HaveVideo.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/HaveVideo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Models/MediaLib.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/MediaLib.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/stylesheets/flexslider.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/stylesheets/flexslider.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/stylesheets/responsive.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/stylesheets/responsive.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/stylesheets/shortcodes.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/stylesheets/shortcodes.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SearchVideoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SearchVideoController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/stylesheets/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/stylesheets/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/logo@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/logo@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/parallax/bg-parallax1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/parallax/bg-parallax1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/parallax/bg-parallax2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/parallax/bg-parallax2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/javascript/gmap3.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/en/passwords.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/passwords.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/en/validation.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/validation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/ShowHaveVideo.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/ShowHaveVideo.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,7 +65,17 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="SIGN_OFF_COMMIT" value="true" />
   </component>
-  <component name="PhpDebugGeneral" listening_started="true" />
+  <component name="PhpDebugGeneral" xdebug_debug_port="9901" listening_started="true" />
+  <component name="PhpServers">
+    <servers>
+      <server host="leonardohome.online" id="8e4c1f34-c221-44ab-8840-6f7d6effca0f" name="leonardohome.online" />
+      <server host="leonardooleg.club" id="5b588ceb-2671-476a-ac48-b6127a785b48" name="leonardooleg.club" use_path_mappings="true">
+        <path_mappings>
+          <mapping local-root="$PROJECT_DIR$/public" remote-root="C:/OSPanel/domains/leonardooleg.club/public" />
+        </path_mappings>
+      </server>
+    </servers>
+  </component>
   <component name="ProjectId" id="1P9mo8knGowGlSTcPeqHm3HdeZ2" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -65,7 +88,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/javascript" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -75,16 +98,18 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.debug" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\OSPanel\domains\leonardohome.online\public\javascript" />
+      <recent name="C:\OSPanel\domains\leonardohome.online\public\js" />
+      <recent name="C:\OSPanel\domains\leonardohome.online\public\css" />
+      <recent name="C:\OSPanel\domains\leonardohome.online\resources\views" />
+      <recent name="C:\OSPanel\domains\leonardohome.online\app\Http\Controllers" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\OSPanel\domains\leonardohome.online\app" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\OSPanel\domains\leonardohome.online\app\Models" />
-      <recent name="C:\OSPanel\domains\leonardohome.online\app\Http\Controllers" />
-      <recent name="C:\OSPanel\domains\leonardohome.online\resources\views" />
-      <recent name="C:\OSPanel\domains\leonardohome.online\resources\views\layouts" />
     </key>
   </component>
   <component name="ServiceViewManager">
@@ -120,7 +145,23 @@
       <workItem from="1565787423461" duration="1343000" />
       <workItem from="1579167717581" duration="5224000" />
       <workItem from="1579206948443" duration="20000" />
-      <workItem from="1579962173151" duration="1368000" />
+      <workItem from="1579962173151" duration="3090000" />
+      <workItem from="1579967127593" duration="618000" />
+      <workItem from="1579989030761" duration="11000" />
+      <workItem from="1579990406687" duration="58000" />
+      <workItem from="1579994603710" duration="2322000" />
+      <workItem from="1580044446790" duration="12000" />
+      <workItem from="1580049893114" duration="1291000" />
+      <workItem from="1580062977842" duration="2915000" />
+      <workItem from="1580067142978" duration="549000" />
+      <workItem from="1580067711444" duration="3083000" />
+      <workItem from="1580072633712" duration="1218000" />
+      <workItem from="1580077301394" duration="4477000" />
+      <workItem from="1580128316766" duration="3859000" />
+      <workItem from="1580138554894" duration="738000" />
+      <workItem from="1580139324495" duration="3734000" />
+      <workItem from="1580151216771" duration="12200000" />
+      <workItem from="1580207926938" duration="1245000" />
     </task>
     <task id="LOCAL-00001" summary="нульовий">
       <created>1565295221862</created>
@@ -150,7 +191,14 @@
       <option name="project" value="LOCAL" />
       <updated>1565295483358</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="перехін на 6 вер">
+      <created>1579963770380</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1579963770380</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,23 +223,96 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <MESSAGE value="нульовий" />
-    <option name="LAST_COMMIT_MESSAGE" value="нульовий" />
+    <MESSAGE value="перехін на 6 вер" />
+    <option name="LAST_COMMIT_MESSAGE" value="перехін на 6 вер" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="709" y="295" key="FileChooserDialogImpl" timestamp="1579206965969">
+    <state x="194" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1580068275425">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="709" y="295" key="FileChooserDialogImpl/0.0.1858.1080@0.0.1858.1080" timestamp="1579206965969" />
+    <state x="194" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1580068275425" />
+    <state x="552" y="49" key="CommitChangelistDialog2" timestamp="1579963767437">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state x="552" y="49" key="CommitChangelistDialog2/0.0.1858.1080@0.0.1858.1080" timestamp="1579963767437" />
+    <state x="709" y="295" key="FileChooserDialogImpl" timestamp="1580138577963">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state x="709" y="295" key="FileChooserDialogImpl/0.0.1858.1080@0.0.1858.1080" timestamp="1580138577963" />
+    <state width="1859" height="410" key="GridCell.Tab.0.bottom" timestamp="1580166022981">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1859" height="410" key="GridCell.Tab.0.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1580166022981" />
+    <state width="1859" height="410" key="GridCell.Tab.0.center" timestamp="1580166022981">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1859" height="410" key="GridCell.Tab.0.center/0.0.1858.1080@0.0.1858.1080" timestamp="1580166022981" />
+    <state width="1859" height="410" key="GridCell.Tab.0.left" timestamp="1580166022981">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1859" height="410" key="GridCell.Tab.0.left/0.0.1858.1080@0.0.1858.1080" timestamp="1580166022981" />
+    <state width="1859" height="410" key="GridCell.Tab.0.right" timestamp="1580166022981">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1859" height="410" key="GridCell.Tab.0.right/0.0.1858.1080@0.0.1858.1080" timestamp="1580166022981" />
+    <state width="1859" height="410" key="GridCell.Tab.1.bottom" timestamp="1580166022981">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1859" height="410" key="GridCell.Tab.1.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1580166022981" />
+    <state width="1859" height="410" key="GridCell.Tab.1.center" timestamp="1580166022981">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1859" height="410" key="GridCell.Tab.1.center/0.0.1858.1080@0.0.1858.1080" timestamp="1580166022981" />
+    <state width="1859" height="410" key="GridCell.Tab.1.left" timestamp="1580166022981">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1859" height="410" key="GridCell.Tab.1.left/0.0.1858.1080@0.0.1858.1080" timestamp="1580166022981" />
+    <state width="1859" height="410" key="GridCell.Tab.1.right" timestamp="1580166022981">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1859" height="410" key="GridCell.Tab.1.right/0.0.1858.1080@0.0.1858.1080" timestamp="1580166022981" />
+    <state width="1859" height="410" key="GridCell.Tab.2.bottom" timestamp="1580166022982">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1859" height="410" key="GridCell.Tab.2.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1580166022982" />
+    <state width="1859" height="410" key="GridCell.Tab.2.center" timestamp="1580166022982">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1859" height="410" key="GridCell.Tab.2.center/0.0.1858.1080@0.0.1858.1080" timestamp="1580166022982" />
+    <state width="1859" height="410" key="GridCell.Tab.2.left" timestamp="1580166022982">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1859" height="410" key="GridCell.Tab.2.left/0.0.1858.1080@0.0.1858.1080" timestamp="1580166022982" />
+    <state width="1859" height="410" key="GridCell.Tab.2.right" timestamp="1580166022982">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1859" height="410" key="GridCell.Tab.2.right/0.0.1858.1080@0.0.1858.1080" timestamp="1580166022982" />
     <state x="763" y="460" key="NewPhpFileDialog" timestamp="1579167772005">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="763" y="460" key="NewPhpFileDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1579167772005" />
-    <state x="92" y="92" width="1674" height="896" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1579963478603">
+    <state x="759" y="328" key="PhpDebugProjectChooserDialog" timestamp="1580139292569">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="92" y="92" width="1674" height="896" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1579963478603" />
+    <state x="759" y="328" key="PhpDebugProjectChooserDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1580139292569" />
+    <state x="430" y="183" key="SettingsEditor" timestamp="1580069055724">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state x="430" y="183" key="SettingsEditor/0.0.1858.1080@0.0.1858.1080" timestamp="1580069055724" />
+    <state x="521" y="269" key="Vcs.Push.Dialog.v2" timestamp="1579963778892">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state x="521" y="269" key="Vcs.Push.Dialog.v2/0.0.1858.1080@0.0.1858.1080" timestamp="1579963778892" />
+    <state x="92" y="92" width="1674" height="896" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1580170229920">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state x="92" y="92" width="1674" height="896" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1580170229920" />
+    <state x="615" y="256" width="627" height="568" key="find.popup" timestamp="1580170620074">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state x="615" y="256" width="627" height="568" key="find.popup/0.0.1858.1080@0.0.1858.1080" timestamp="1580170620074" />
   </component>
 </project>

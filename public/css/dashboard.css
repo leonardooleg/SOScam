@@ -1,0 +1,543 @@
+body {
+    font-size: .875rem;
+}
+
+.row {
+    margin-top: 15px;
+}
+
+.feather {
+    width: 16px;
+    height: 16px;
+    vertical-align: text-bottom;
+}
+
+main .container {
+    padding-top: 15px;
+}
+
+/*
+ * Sidebar
+ */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100; /* Behind the navbar */
+    padding: 48px 0 0; /* Height of navbar */
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+}
+
+.sidebar-sticky {
+    position: relative;
+    top: 0;
+    height: calc(100vh - 48px);
+    padding-top: .5rem;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+
+@supports ((position: -webkit-sticky) or (position: sticky)) {
+    .sidebar-sticky {
+        position: -webkit-sticky;
+        position: sticky;
+    }
+}
+
+.sidebar .nav-link {
+    font-weight: 500;
+    color: #333;
+}
+
+.sidebar .nav-link .feather {
+    margin-right: 4px;
+    color: #999;
+}
+
+.sidebar .nav-link.active {
+    color: #007bff;
+}
+
+.sidebar .nav-link:hover .feather,
+.sidebar .nav-link.active .feather {
+    color: inherit;
+}
+
+.sidebar-heading {
+    font-size: .75rem;
+    text-transform: uppercase;
+}
+
+/*
+ * Content
+ */
+
+[role="main"] {
+    padding-top: 133px; /* Space for fixed navbar */
+}
+
+@media (min-width: 768px) {
+    [role="main"] {
+        padding-top: 48px; /* Space for fixed navbar */
+    }
+}
+
+/*
+ * Navbar
+ */
+
+.navbar-brand {
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    font-size: 1rem;
+    background-color: rgba(0, 0, 0, .25);
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
+}
+
+.navbar .form-control {
+    padding: .75rem 1rem;
+    border-width: 0;
+    border-radius: 0;
+}
+
+.form-control-dark {
+    color: #fff;
+    background-color: rgba(255, 255, 255, .1);
+    border-color: rgba(255, 255, 255, .1);
+}
+
+.form-control-dark:focus {
+    border-color: transparent;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
+}
+
+/* Хлебные крошки */
+/* Style the list */
+ol.breadcrumb {
+    padding: 10px 16px;
+    list-style: none;
+    background-color: #eee;
+}
+
+/* Display list items side by side */
+ol.breadcrumb li {
+    display: inline;
+    font-size: 18px;
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+ol.breadcrumb li + li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+}
+
+/* Add a color to all links inside the list */
+ol.breadcrumb li a {
+    color: #0275d8;
+    text-decoration: none;
+}
+
+/* Add a color on mouse-over */
+ol.breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+}
+
+/* Хлебные крошки */
+/*Админка добавить товар*/
+.treeHTML { /* вся форма */
+    line-height: normal;
+}
+
+.treeHTML label { /* пункты и соединяющие их линии */
+    position: relative;
+    display: block;
+    padding: 0 0 0 1.2em;
+}
+
+.treeHTML label:not(:nth-last-of-type(1)) {
+    border-left: 1px solid #94a5bd;
+}
+
+.treeHTML label:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1.1em;
+    height: .5em;
+    border-bottom: 1px solid #94a5bd;
+}
+
+.treeHTML label:nth-last-of-type(1):before {
+    border-left: 1px solid #94a5bd;
+}
+
+.treeHTML fieldset,
+.treeHTML fieldset[class=""] .razvernut { /* списки */
+    position: absolute;
+    visibility: hidden;
+    margin: 0;
+    padding: 0 0 0 2em;
+    border: none;
+}
+
+.treeHTML fieldset:not(:last-child) {
+    border-left: 1px solid #94a5bd;
+}
+
+.treeHTML .razvernut {
+    position: relative;
+    visibility: visible;
+}
+
+.treeHTML > fieldset > legend,
+.treeHTML .razvernut > fieldset > legend { /* плюс */
+    position: absolute;
+    left: -5px;
+    top: 0;
+    height: 7px;
+    width: 7px;
+    margin-top: -1em;
+    padding: 0;
+    border: 1px solid #94a5bd;
+    border-radius: 2px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-color: #fff;
+    background-image: linear-gradient(to left, #1b4964, #1b4964), linear-gradient(#1b4964, #1b4964), linear-gradient(315deg, #a0b6d8, #e8f3ff 60%, #fff 60%);
+    background-size: 1px 5px, 5px 1px, 100% 100%;
+    visibility: visible;
+    cursor: pointer;
+}
+
+.treeHTML fieldset[class=""] .razvernut fieldset legend {
+    visibility: hidden;
+}
+
+.treeHTML .razvernut > legend { /* минус */
+    background-image: linear-gradient(#1b4964, #1b4964) !important;
+    background-size: 5px 1px !important;
+}
+
+/*Админка добавить товар*/
+/*Редактор заказа*/
+/****Корзина*****/
+.btn-back {
+    background-color: #ff4d05;
+    color: #fff;
+}
+
+.link-back:hover {
+    color: #fff;
+}
+
+.btn-back:active {
+    background-color: #ff2500;
+    color: #fff;
+}
+
+.btn-back:hover {
+    background-color: #ff2500;
+    color: #fff;
+}
+
+.cart-block {
+    background-color: #fff;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-bottom: 10px;
+    top: 10px;
+}
+
+#cart span.badge {
+    background-color: #e86719;
+    border-radius: 10px;
+    color: white;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 1;
+    padding: 3px 7px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.img_cart {
+    width: 100%;
+}
+
+.product_cart {
+    color: #2c2c2c;
+    font-size: 18px;
+}
+
+.product_type_cart {
+    color: #2c2c2c;
+    font-size: 16px;
+}
+
+a.product_name_cart {
+    color: #2c2c2c;
+    font-size: 24px;
+    line-height: 3;
+}
+
+.card-product-block .alert-light {
+    border-color: #eaeaea;
+}
+
+.product_attribute_cart {
+    font-size: 17px;
+    text-align: center;
+}
+
+.product_attribute_cart img {
+    width: 11px;
+}
+
+.product_attribute_block_cart {
+    border-color: #f5f5f9;
+}
+
+.color-table.product_attribute_block_cart li label {
+    border-radius: 5px;
+}
+
+.qty .count {
+    color: #000;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 18px;
+    padding: 0 2px;
+    min-width: 35px;
+    text-align: center;
+}
+
+.qty .plus {
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
+    color: #000;
+    width: 21px;
+    height: 21px;
+    font: 21px/1 Arial, sans-serif;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #e5e5e5;
+}
+
+.qty .minus {
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
+    color: #000;
+    width: 21px;
+    height: 21px;
+    font: 18px/1 Arial, sans-serif;
+    text-align: center;
+    border-radius: 50%;
+    background-clip: padding-box;
+    background-color: #e5e5e5;
+}
+
+.minus:hover {
+    background-color: #717fe0 !important;
+}
+
+.plus:hover {
+    background-color: #717fe0 !important;
+}
+
+.white {
+    background-color: #fff;
+    color: #FF008A;
+    border-color: #FF008A;
+}
+
+.product_attribute_cart .qty {
+    display: contents;
+}
+
+img.red-x {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+
+.cart-block .CartItem span {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.cart-block .CartItem input {
+    border: 0;
+    width: 2%;
+}
+
+.cart-block .CartItem input::-webkit-outer-spin-button,
+.cart-block .CartItem input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.cart-block .CartItem input:disabled {
+    background-color: white;
+}
+
+.CartItem.row {
+    border-bottom: 1px solid #ebebeb;
+    padding: 15px 0;
+}
+
+section.card-product.product__top-block {
+    padding-top: 0px;
+    margin-top: 0;
+}
+
+.cart-animate {
+    display: none;
+}
+
+.total-block {
+    margin: auto
+}
+
+.total-col {
+    font-size: 16px;
+}
+
+.total-price {
+    font-size: 26px;
+}
+
+.cart-bottom {
+    margin-top: 50px;
+}
+
+.promo-block {
+    text-align: center;
+    margin: 0 auto;
+    display: table;
+}
+
+.promo-text {
+    text-align: left;
+    margin-left: 10%;
+}
+
+.promo-form {
+    float: left;
+    border-radius: 10px !important;
+    border-color: #FF008A;
+    color: #FF008A;
+}
+
+.promo-form button {
+    border-radius: 7px !important;
+    border-color: #ff3a00;
+    color: #ff3a00;
+    padding: 7px 30px;
+}
+
+.promo-form button:hover {
+    background-color: #ff5f1a;
+    color: #fff;
+    border-color: #ff3a00;
+}
+
+.promo-form button:active {
+    background-color: #ff5f1a;
+    color: #fff;
+    border-color: #ff3a00;
+}
+
+.promo-form input {
+    border-radius: 5px !important;
+    border-color: #d3d3d3;
+    color: #FF008A;
+    text-transform: uppercase;
+    font-size: 18px;
+    width: 160px;
+}
+
+.promo-text {
+    font-size: 16px;
+    color: #515050;
+}
+
+.cart-steep-1 {
+    margin-top: 15px;
+    font-size: 22px;
+    background-color: #ff3a00;
+    color: #fff;
+    border-radius: 7px;
+    padding: 7px 50px;
+}
+
+.cart-steep-1:hover {
+    font-size: 22px;
+    background-color: #ff0000;
+    color: #fff;
+}
+
+.cart-steep-1:active {
+    font-size: 22px;
+    background-color: #ff0000;
+    color: #fff;
+}
+
+.total-price-cart {
+    font-size: 25px;
+}
+
+.total-info-cart {
+    font-size: 19px;
+}
+
+.cart2-block .data_trek {
+    color: #333333;
+}
+
+.cart2-block .data_trek label {
+    font-size: 16px;
+    text-align: center;
+}
+
+.cart2-block .data_trek input {
+    font-size: 16px;
+}
+
+.cart2-block .cart_items_blok {
+    color: #666666;
+    font-size: 14px;
+}
+
+.type_pay + img {
+    opacity: 0.7;
+}
+
+.type_pay:checked + img {
+    opacity: 1;
+}
+
+.cart2-block input[type=radio] {
+    display: none;
+}
+
+/*Редактор заказа*/
+/*Google maps*/
+/* Always set the map height explicitly to define the size of the div
+ * element that contains the map. */
+#map {
+    height: 256px;
+}
+
+
+/*Google maps*/

@@ -10,7 +10,14 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth']], function () {
+    Route::get('/', 'DashboardController@dashboard')->name('admin.index');
+    Route::resource('/have-video', 'HaveVideoController', ['as' => 'admin']);
 
+    Route::group(['prefix' => 'user_managment', 'namespace' => 'UserManagment'], function () {
+        Route::resource('/user', 'UserController', ['as' => 'admin.user_managment']);
+    });
+});
 
 Route::get('/', 'WelcomeController@index')->name('welcome');
 

@@ -19,7 +19,7 @@ class SearchVideoController extends Controller
     {
         $video = SearchVideo::where('slug', 'like', $slug)->first();
         $photo = DB::table('media_libs')->where('have_videos_id', $video->id)->get();
-        return view('ShowHaveVideo')->with(['video' => $video, 'photo' => $photo]);
+        return view('ShowSearchVideo')->with(['video' => $video, 'photo' => $photo]);
     }
 
 
