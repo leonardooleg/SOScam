@@ -41,4 +41,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 /*DB::listen(function($query) {
     var_dump($query->sql, $query->bindings);
 });*/
+
+
 Auth::routes();

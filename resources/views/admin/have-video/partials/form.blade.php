@@ -13,6 +13,11 @@
 <input type="text" class="form-control" name="title" placeholder="Наименование товара" value="{{$video->title ?? ""}}"
        required>
 
+<label for=""><strong>Теги (укажіть для швидшого пошуку) *через кому</strong></label>
+<input type="text" class="form-control" name="tags" id="tags"
+       value="@foreach($video->tags as $tag){{$tag->name ?? ''}}, @endforeach">
+
+
 <label for=""><strong>Slug (уникальное значение)</strong></label>
 <input class="form-control" type="text" name="slug" placeholder="Автоматическая генерация"
        value="{{$video->slug ?? ""}}" readonly="">

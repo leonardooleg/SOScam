@@ -1673,15 +1673,15 @@ section.main-content.page-listing {
 	margin-bottom: 43px;
 }
 
-.listing-wrap .list:first-child {
-	padding-right: 148px;
+.listing-wrap .list-inline-item {
+    padding-right: 38px;
 }
 
 .listing-wrap .wrap-list ul li {
 	margin-bottom: 13px;
 }
 
-.listing-wrap .list li span {
+.listing-wrap .list-inline span {
     width: 20px;
     height: 20px;
     display: inline-block;
@@ -1689,9 +1689,9 @@ section.main-content.page-listing {
     margin-right: 19px;
     line-height: 20px;
     color: #fff;
-    background-color: #ED1C24;
+    background-color: #ED1C24 !important;
     -webkit-border-radius: 3px;
-            border-radius: 3px;
+    border-radius: 3px;
 }
 
 .listing-wrap .list-tab h3.title-listing {

@@ -163,6 +163,10 @@ class HaveVideoController extends Controller
                 }
             }
         }
+     
+        // Now add tags
+        $HaveVideo->tag(explode(',', $request->tags));
+
         $HaveVideo->title = $request->title;
         $HaveVideo->description_short = $request->description_short;
         $HaveVideo->description = $request->description;

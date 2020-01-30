@@ -226,13 +226,11 @@
                                 </div>
                                 <h3 class="title-listing">Характеристики</h3>
                                 <div class="wrap-list clearfix">
-                                    <ul class="list float-left">
-                                        <li><span><i class="fa fa-check"></i></span>Booking online</li>
-                                        <li><span><i class="fa fa-check"></i></span>Free ship</li>
-                                    </ul>
-                                    <ul class="list float-left">
-                                        <li><span><i class="fa fa-check"></i></span>Booking online</li>
-                                        <li><span><i class="fa fa-check"></i></span>Booking online</li>
+                                    <ul class="list-inline">
+                                        @foreach($video->tags as $tag)
+                                            <li class="list-inline-item"><a href="/tag/{{$tag->slug ?? ''}}"> <span><i
+                                                            class="fa fa-check"></i></span>{{$tag->name ?? ''}}</a>
+                                            </li> @endforeach
                                     </ul>
                                 </div>
                                 <hr/>
