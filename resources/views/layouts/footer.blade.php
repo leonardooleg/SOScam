@@ -4,15 +4,15 @@
         <div class="row">
             <div class="col-lg-3">
                 <div class="widget widget_text widget_info">
-                    <h5 class="widget-title">About Us</h5>
+                    <h5 class="widget-title">Про проект</h5>
                     <div class="textwidget">
-                        <p>Lorem ipsum dolor sit amet, luctus pos semper felis consectetuer hendrerit, im varius enim,
-                            tellus tincidunt tellus est sed</p>
+                        <p>Цей не комерційний проект створений з метою домопогти потерпілим в ДТП знайти очевидців
+                            дорожньої події</p>
                     </div><!-- /.textwidget -->
                     <ul class="flat-infomation">
-                        <li><i class="fa fa-map-marker"></i>PO Box 16122 Collins Street West Vic-toria 8007 Australia
+                        <li><i class="fa fa-map-marker"></i>Якщо вам потрібна домомога із сайтом звертайтись
                         </li>
-                        <li><i class="fa fa-phone"></i>+61 3 8376 6284</li>
+                        <li><i class="fa fa-mail-forward"></i>help@soscam.net</li>
                     </ul>
                 </div><!-- /.widget -->
             </div><!-- /.col-lg-3 -->

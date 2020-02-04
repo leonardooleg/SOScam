@@ -7,8 +7,8 @@
 
         <hr>
 
-        <a href="{{route('admin.have-video.create')}}" class="btn btn-primary pull-right"><i
-                class="fa fa-plus-square-o"></i> Додати відео</a>
+        <a href="{{route('admin.search-video.create')}}" class="btn btn-primary pull-right"><i
+                class="fa fa-plus-square-o"></i> Добавить товар</a>
         <table class="table table-striped">
             <thead>
             <th>Наименование</th>
@@ -19,7 +19,7 @@
             <tbody>
             @forelse ($videos as $video)
                 <tr>
-                    <td><a href="{{route('admin.have-video.edit', $video)}}">{{$video->title}}</a></td>
+                    <td><a href="{{route('admin.search-video.edit', $video)}}">{{$video->title}}</a></td>
                     {{-- <td>
                          @if($product->parent_id)дочерняя
                          @else <b>Главная</b>
@@ -31,7 +31,7 @@
                         @endif
                     </td>
                     <td>
-                        <a href="{{route('admin.have-video.edit', $video)}}"><i class="fa fa-edit"></i></a>
+                        <a href="{{route('admin.search-video.edit', $video)}}"><i class="fa fa-edit"></i></a>
                     </td>
                 </tr>
             @empty

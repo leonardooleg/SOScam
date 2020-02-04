@@ -20,12 +20,12 @@
                 </ul>
             </div>
         @endif
-        <form class="form-horizontal" action="{{route('admin.have-video.store')}}" method="post"
+        <form class="form-horizontal" action="{{route('admin.search-video.store')}}" method="post"
               enctype="multipart/form-data">
             {{ csrf_field() }}
 
             {{-- Form include --}}
-            @include('admin.have-video.partials.form')
+            @include('admin.search-video.partials.form')
             <input type="hidden" name="created_by" value="{{Auth::id()}}">
         </form>
     </div>

@@ -246,7 +246,7 @@
                 </div>
                 <div class="row">
                     <div class="wrap-flat-product clearfix col-md-12">
-                        @foreach($products as $product)
+                        @foreach($HaveVideos as $HaveVideo)
                             <div class="flat-product">
                                 <div class="featured-product">
                                     <img src="images/services/1.jpg" alt="image">
@@ -256,15 +256,17 @@
                                     <div class="rate-product">
                                         <div class="link-review clearfix">
                                             <div class="button-product float-left">
-                                                <button type="button" class="flat-button" onclick="location.href='#'">
-                                                    bar & coffe
+                                                <button type="button" class="flat-button">
+                                                    @if($HaveVideo->city){{$HaveVideo->city}}
+                                                    & {{$HaveVideo->country}}  @else{{$HaveVideo->region}} @endif
                                                 </button>
                                             </div>
                                         </div>
                                         <div class="info-product">
                                             <h6 class="title"><a
-                                                    href="/have-video/{{$product->slug}}">{{$product->title}}</a></h6>
-                                            <p>{{$product->maps}}</p>
+                                                    href="/have-video/{{$HaveVideo->slug}}">{{$HaveVideo->title}}</a>
+                                            </h6>
+                                            <p>{{$HaveVideo->maps}}</p>
                                             <a href="#" class="heart">
                                                 <i class="ion-android-favorite-outline"></i>
                                             </a>
@@ -276,7 +278,7 @@
                                         TM
                                     </div>
                                     <div class="text">
-                                        <p>{{$product->description_short}}</p>
+                                        <p>{{$HaveVideo->description_short}}</p>
                                     </div>
                                 </div>
                             </div>
@@ -301,21 +303,21 @@
                 <div class="row">
                     <div class="col-md-12 text-center">
                         <div class="flat-counter">
-                            <span class="over">Over</span>
+                            <span class="over">Понад</span>
                             <div class="content-counter">
                                 <div class="numb-count" data-to="1512999" data-speed="1000"
                                      data-waypoint-active="yes">1,512,999</div>
                             </div>
-                            <span class="download">Downloads</span>
+                            <span class="download">запитів</span>
                         </div>
-                        <p>Yes, this is real Our application is already available for android and ios only with a touch
-                            you will <br>easily find what do you want</p>
+                        <p>Так, це правда - працює. За допомогою нашого сайта ви можете знайти очевидця аварії.
+                            <br> розмістивши запит ви зможете допомогти іншим, або вам допоможуть інші</p>
                         <div class="flat-download">
-                            <button type="button" class="flat-button" onclick="location.href='#'"><i
-                                    class="ion-social-android"></i>Download for Android
+                            <button type="button" class="flat-button" onclick="location.href='/search-video'"><i
+                                    class="ion-help"></i>Допоможіть мені
                             </button>
-                            <button type="button" class="flat-button" onclick="location.href='#'"><i
-                                    class="ion-social-apple"></i>Download for Apple
+                            <button type="button" class="flat-button" onclick="location.href='/have-video'"><i
+                                    class="ion-android-car"></i>Допомогти іншим
                             </button>
                         </div>
                     </div>
@@ -328,105 +330,47 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="title-section style2">
-                            <h1 class="title">Latest News</h1>
+                            <h1 class="title">Допоможіть знайти очевидця</h1>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-4 col-sm-6">
-                        <article class="post clearfix">
-                            <div class="featured-post">
-                                <a href="blog-single.html"><img src="images/blog/s1.jpg" alt="image"></a>
-                                <ul class="post-comment">
-                                    <li class="date">
-                                        27
-                                    </li>
-                                    <li class="month">
-                                        AUG
-                                    </li>
-                                </ul>
-                            </div><!-- /.feature-post -->
-                            <div class="content-post">
-                                <ul class="meta-data clearfix">
-                                    <li class="category">
-                                        Posted in: <a href="#">Restaurant, </a><a href="#">Hotel</a>
-                                    </li>
-                                    <li> by: <a href="#">admin</a></li>
-                                </ul><!-- /.meta-post -->
-                                <h3 class="title-post"><a href="blog-single.html">
-                                        Top 10 French restaurants
-                                    </a></h3>
-                                <p>Sed ut perspiciatis unde omnis iste error sit luptatem accusantium doloremque lau
-                                    dantium, </p>
-                                <div class="more-link">
-                                    <a href="blog-single.html">Read More</a>
-                                </div>
-                            </div><!-- /.content-post -->
-                        </article>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <article class="post clearfix">
-                            <div class="featured-post">
-                                <a href="blog-single.html"><img src="images/blog/s2.jpg" alt="image"></a>
-                                <ul class="post-comment">
-                                    <li class="date">
-                                        21
-                                    </li>
-                                    <li class="month">
-                                        DEC
-                                    </li>
-                                </ul>
-                            </div><!-- /.feature-post -->
-                            <div class="content-post">
-                                <ul class="meta-data clearfix">
-                                    <li class="category">
-                                        Posted in: <a href="#">Restaurant, </a><a href="#">Hotel</a>
-                                    </li>
-                                    <li> by: <a href="#">admin</a></li>
-                                </ul><!-- /.meta-post -->
-                                <h3 class="title-post"><a href="blog-single.html">
-                                        6 Tips to retain your top sales talent
-                                    </a></h3>
-                                <p>Sed ut perspiciatis unde omnis iste error sit luptatem accusantium doloremque lau
-                                    dantium, </p>
-                                <div class="more-link">
-                                    <a href="blog-single.html">Read More</a>
-                                </div>
-                            </div><!-- /.content-post -->
-                        </article>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <article class="post clearfix">
-                            <div class="featured-post">
-                                <a href="blog-single.html"><img src="images/blog/s3.jpg" alt="image"></a>
-                                <ul class="post-comment">
-                                    <li class="date">
-                                        18
-                                    </li>
-                                    <li class="month">
-                                        JUN
-                                    </li>
-                                </ul>
-                            </div><!-- /.feature-post -->
-                            <div class="content-post">
-                                <ul class="meta-data clearfix">
-                                    <li class="category">
-                                        Posted in: <a href="#">Restaurant, </a><a href="#">Hotel</a>
-                                    </li>
-                                    <li> by: <a href="#">admin</a></li>
-                                </ul><!-- /.meta-post -->
-                                <h3 class="title-post"><a href="blog-single.html">
-                                        Top 10 French restaurants
-                                    </a></h3>
-                                <p>Sed ut perspiciatis unde omnis iste error sit luptatem accusantium doloremque lau
-                                    dantium, </p>
-                                <div class="more-link">
-                                    <a href="blog-single.html">Read More</a>
-                                </div>
-                            </div><!-- /.content-post -->
-                        </article>
-                    </div>
-
+                    @foreach($SearchVideos as $SearchVideo)
+                        <div class="col-lg-4 col-sm-6">
+                            <article class="post clearfix">
+                                <div class="featured-post">
+                                    <a href="/search-video/{{$SearchVideo->slug}}"><img src="https://maps.googleapis.com/maps/api/staticmap?zoom=9&size=600x300&maptype=roadmap
+&markers=color:red%7Clabel:S%7C{{$SearchVideo->lat ?? 0}},{{$SearchVideo->lng ?? 0}}&key=AIzaSyBUrGc3fA_1Atz-Nw8ZdHJrzq8ou61TvxU"
+                                                                                        alt="image"></a>
+                                    <ul class="post-comment">
+                                        <li class="date">
+                                            27
+                                        </li>
+                                        <li class="month">
+                                            AUG
+                                        </li>
+                                    </ul>
+                                </div><!-- /.feature-post -->
+                                <div class="content-post">
+                                    <ul class="meta-data clearfix">
+                                        <li class="category">
+                                            @foreach($SearchVideo->tags as $tag)
+                                                <a href="/tag/{{$tag->slug ?? ''}}">{{$tag->name ?? ''}}</a>
+                                                , @endforeach
+                                        </li>
+                                        <li> запит від: <a href="#">Юрій</a></li>
+                                    </ul><!-- /.meta-post -->
+                                    <h3 class="title-post"><a href="/search-video/{{$SearchVideo->slug}}">
+                                            {{$SearchVideo->title}}
+                                        </a></h3>
+                                    <p>{{$SearchVideo->description_short}} </p>
+                                    <div class="more-link">
+                                        <a href="/search-video/{{$SearchVideo->slug}}">Читати детальніше</a>
+                                    </div>
+                                </div><!-- /.content-post -->
+                            </article>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </section>

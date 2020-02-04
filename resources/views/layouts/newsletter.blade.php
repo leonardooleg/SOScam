@@ -12,7 +12,7 @@
                     <div class="field clearfix" id="subscribe-content">
                         <p class="wrap-input-email">
                             <input type="text" tabindex="2" id="subscribe-email" name="subscribe-email"
-                                   placeholder="Your Email Here">
+                                   placeholder="Ваш Email тут">
                         </p>
                         <p class="wrap-btn">
                             <button type="button" id="subscribe-button" class=" subscribe-submit effect-button"
@@ -29,7 +29,7 @@
                         <div class="icon-count">
                             <i class="ion-waterdrop"></i>
                         </div>
-                        <div class="name-count">Listing</div>
+                        <div class="name-count">Відслідковують</div>
                         <div class="numb-count" data-to="1897" data-speed="2000" data-waypoint-active="yes">1897</div>
                     </div>
                 </div>
@@ -38,9 +38,9 @@
                 <div class="flat-counter text-center">
                     <div class="content-counter">
                         <div class="icon-count">
-                            <i class="ion-pricetags"></i>
+                            <i class="ion-map"></i>
                         </div>
-                        <div class="name-count">Categories</div>
+                        <div class="name-count">Місць</div>
                         <div class="numb-count" data-to="967" data-speed="2000" data-waypoint-active="yes">967</div>
                     </div>
                 </div>
@@ -51,7 +51,7 @@
                         <div class="icon-count">
                             <i class="ion-ios-people"></i>
                         </div>
-                        <div class="name-count">Users</div>
+                        <div class="name-count">Користувачів</div>
                         <div class="numb-count" data-to="1101" data-speed="2000" data-waypoint-active="yes">1101</div>
                     </div>
                 </div>

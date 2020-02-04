@@ -10,4 +10,5 @@ class HaveVideo extends Model
     use Taggable;
 
     protected $guarded = [];
+
 }

@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
+
 use App\Http\Controllers\Controller;
-use App\Models\HaveVideo;
 use App\Models\MediaLib;
+use App\Models\SearchVideo;
 use Carbon\Carbon;
 use DB;
 use Exception;
@@ -12,7 +13,9 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Str;
 
-class HaveVideoController extends Controller
+/*use Illuminate\Http\Request;*/
+
+class SearchVideoController extends Controller
 {
     public function __construct()
     {
@@ -30,8 +33,8 @@ class HaveVideoController extends Controller
      */
     public function index()
     {
-        return view('admin.have-video.index', [
-            'videos' => HaveVideo::orderBy('created_at', 'desc')->paginate(15)
+        return view('admin.search-video.index', [
+            'videos' => SearchVideo::orderBy('created_at', 'desc')->paginate(15)
         ]);
     }
 
@@ -42,46 +45,43 @@ class HaveVideoController extends Controller
      */
     public function create()
     {
-
-
-        return view('admin.have-video.create');
+        return view('admin.search-video.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param Request $request
-     * @param App\Traits\UploadTrait\uploadImage uploadOne
      * @return Response
      */
     public function store(Request $request)
     {
-
-
-        $HaveVideo = new HaveVideo();
-        $HaveVideo->title = $request->title;
-        $HaveVideo->published = $request->published;
-        $HaveVideo->slug = Str::slug(mb_substr($request->title, 0, 40) . "-" . Carbon::now()->format('dmyHi'), '-');
-        $HaveVideo->description_short = $request->description_short;
-        $HaveVideo->description = $request->description;
-        $HaveVideo->lat = $request->lat;
-        $HaveVideo->lng = $request->lng;
-        $HaveVideo->city = $request->city;
-        $HaveVideo->region = $request->region;
-        $HaveVideo->country = $request->country;
-        $HaveVideo->date = $request->date;
-        $HaveVideo->meta_title = $request->meta_title;
-        $HaveVideo->meta_description = $request->meta_description;
-        $HaveVideo->meta_keyword = $request->meta_keyword;
-        $HaveVideo->save();
+        $SearchVideo = new SearchVideo();
+        $SearchVideo->title = $request->title;
+        $SearchVideo->published = $request->published;
+        $SearchVideo->slug = Str::slug(mb_substr($request->title, 0, 40) . "-" . Carbon::now()->format('dmyHi'), '-');
+        $SearchVideo->description_short = $request->description_short;
+        $SearchVideo->description = $request->description;
+        $SearchVideo->lat = $request->lat;
+        $SearchVideo->lng = $request->lng;
+        $SearchVideo->city = $request->city;
+        $SearchVideo->region = $request->region;
+        $SearchVideo->country = $request->country;
+        $SearchVideo->radius = $request->radius;
+        $SearchVideo->date = $request->date;
+        $SearchVideo->time = $request->time;
+        $SearchVideo->meta_title = $request->meta_title;
+        $SearchVideo->meta_description = $request->meta_description;
+        $SearchVideo->meta_keyword = $request->meta_keyword;
+        $SearchVideo->save();
         // Now add tags
-        $HaveVideo->tag(explode(',', $request->tags));
+        $SearchVideo->tag(explode(',', $request->tags));
         $media_photo = $request->file('media_photo');
         if ($media_photo) {
             foreach ($request->file('media_photo') as $file) {
                 $data = "/" . $file->store('uploads/HaveVideo', 'public');
                 $insert_media = MediaLib::updateOrCreate(
-                    ['have_videos_id' => $HaveVideo->id, 'link' => $data, 'type' => 1, 'media' => 1]
+                    ['have_videos_id' => $SearchVideo->id, 'link' => $data, 'type' => 1, 'media' => 2]
                 );
             }
         }
@@ -90,21 +90,21 @@ class HaveVideoController extends Controller
             foreach ($request->media_video as $link) {
                 if ($link) {
                     $insert_media = MediaLib::updateOrCreate(
-                        ['have_videos_id' => $HaveVideo->id, 'link' => $link, 'type' => 2, 'media' => 1]
+                        ['have_videos_id' => $SearchVideo->id, 'link' => $link, 'type' => 2, 'media' => 2]
                     );
                 }
             }
         }
-        return redirect()->route('admin.have-video.index');
+        return redirect()->route('admin.search-video.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param HaveVideo $HaveVideo
+     * @param int $id
      * @return Response
      */
-    public function show(HaveVideo $HaveVideo)
+    public function show($id)
     {
         //
     }
@@ -112,14 +112,14 @@ class HaveVideoController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param HaveVideo $HaveVideo
+     * @param int $id
      * @return Response
      */
-    public function edit(HaveVideo $HaveVideo)
+    public function edit($id)
     {
-        $video = HaveVideo::where('id', $HaveVideo->id)->first();
-        $medias = MediaLib::where('have_videos_id', $HaveVideo->id)->where('media', 1)->get();
-        return view('admin.have-video.edit', [
+        $video = SearchVideo::where('id', $id)->first();
+        $medias = MediaLib::where('have_videos_id', $id)->where('media', 2)->get();
+        return view('admin.search-video.edit', [
             'video' => $video,
             'medias' => $medias
         ]);
@@ -129,13 +129,12 @@ class HaveVideoController extends Controller
      * Update the specified resource in storage.
      *
      * @param Request $request
-     * @param HaveVideo $HaveVideo
+     * @param int $id
      * @return Response
      */
-    public function update(Request $request, HaveVideo $HaveVideo)
+    public function update(Request $request, $id)
     {
-
-        $HaveVideo = HaveVideo::find($HaveVideo->id);
+        $SearchVideo = SearchVideo::find($id);
         /*$image = $request->file('media_photo');
         if ($image){
             $upload=$request->file('media_photo')->store('uploads/HaveVideo', 'public');
@@ -148,7 +147,7 @@ class HaveVideoController extends Controller
             foreach ($request->file('media_photo') as $file) {
                 $data = "/" . $file->store('uploads/HaveVideo', 'public');
                 $insert_media = MediaLib::updateOrCreate(
-                    ['have_videos_id' => $HaveVideo->id, 'link' => $data, 'type' => 1]
+                    ['have_videos_id' => $SearchVideo->id, 'link' => $data, 'type' => 1]
                 );
             }
         }
@@ -157,28 +156,30 @@ class HaveVideoController extends Controller
             foreach ($request->media_video as $link) {
                 if ($link) {
                     $insert_media = MediaLib::updateOrCreate(
-                        ['have_videos_id' => $HaveVideo->id, 'link' => $link, 'type' => 2]
+                        ['have_videos_id' => $SearchVideo->id, 'link' => $link, 'type' => 2]
                     );
                 }
             }
         }
 
         // Now add tags
-        $HaveVideo->tag(explode(',', $request->tags));
-        $HaveVideo->published = $request->published;
-        $HaveVideo->title = $request->title;
-        $HaveVideo->description_short = $request->description_short;
-        $HaveVideo->description = $request->description;
-        $HaveVideo->lat = $request->lat;
-        $HaveVideo->lng = $request->lng;
-        $HaveVideo->city = $request->city;
-        $HaveVideo->region = $request->region;
-        $HaveVideo->country = $request->country;
-        $HaveVideo->date = $request->date;
-        $HaveVideo->meta_title = $request->meta_title;
-        $HaveVideo->meta_description = $request->meta_description;
-        $HaveVideo->meta_keyword = $request->meta_keyword;
-        $HaveVideo->save();
+        $SearchVideo->tag(explode(',', $request->tags));
+        $SearchVideo->published = $request->published;
+        $SearchVideo->title = $request->title;
+        $SearchVideo->description_short = $request->description_short;
+        $SearchVideo->description = $request->description;
+        $SearchVideo->lat = $request->lat;
+        $SearchVideo->lng = $request->lng;
+        $SearchVideo->city = $request->city;
+        $SearchVideo->region = $request->region;
+        $SearchVideo->country = $request->country;
+        $SearchVideo->radius = $request->radius;
+        $SearchVideo->date = $request->date;
+        $SearchVideo->time = $request->time;
+        $SearchVideo->meta_title = $request->meta_title;
+        $SearchVideo->meta_description = $request->meta_description;
+        $SearchVideo->meta_keyword = $request->meta_keyword;
+        $SearchVideo->save();
 
         return back()->with('success', 'Your article has been added successfully. Please wait for the admin to approve.');
     }
@@ -186,16 +187,15 @@ class HaveVideoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param HaveVideo $HaveVideo
+     * @param int $id
      * @return Response
-     *
      * @throws Exception
      */
-    public function destroy(HaveVideo $HaveVideo)
+    public function destroy(SearchVideo $SearchVideo)
     {
-        $HaveVideo->categories()->detach();
-        $HaveVideo->delete();
+        $SearchVideo->categories()->detach();
+        $SearchVideo->delete();
 
-        return redirect()->route('admin.have-video.index');
+        return redirect()->route('admin.search-video.index');
     }
 }

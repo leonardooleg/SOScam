@@ -9,7 +9,7 @@ class SearchVideoController extends Controller
 {
     public function index()
     {
-        $products = SearchVideo::all();
+        $products = SearchVideo::paginate(30);
         return view('SearchVideo')->with(['products' => $products]);
 
     }

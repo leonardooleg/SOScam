@@ -86,58 +86,52 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                 stroke-linejoin="round" class="feather feather-file">
-                                <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
-                                <polyline points="13 2 13 9 20 9"></polyline>
-                            </svg>
-                            <span data-feather="file"></span>
-                            Шукають відео
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="">
+                        <a class="nav-link" href="/admin/search-video">
                             <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" width="1em"
                                  height="1em"
                                  style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);"
                                  preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
                                 <path
-                                    d="M19 3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14M5 10v2h4.4c-.6-.53-1.06-1.22-1.27-2H5m14 2v-2h-3.13c-.21.78-.67 1.47-1.27 2H19m0-4V5H5v3h5v1c0 1.07.93 2 2 2c1.07 0 2-.93 2-2V8h5m2 11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4h7v1c0 1.07.93 2 2 2c1.07 0 2-.93 2-2v-1h7v4M5 17v2h4.4c-.6-.53-1.06-1.22-1.27-2H5m14 2v-2h-3.13c-.21.78-.67 1.47-1.27 2H19z"
+                                    d="M17 14.5V11a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-3.5l4 4v-11M3 3.86l1.4 1.38c3.1-3.05 8.1-3.05 11.2 0L17 3.86C13.14.05 6.87.05 3 3.86m2.8 2.76L7.2 8c1.55-1.5 4.05-1.5 5.6 0l1.4-1.38c-2.32-2.28-6.08-2.28-8.4 0z"
                                     fill="#626262"/>
                             </svg>
-                            Материал (ткани)
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                 stroke-linejoin="round" class="feather feather-shopping-cart">
-                                <circle cx="9" cy="21" r="1"></circle>
-                                <circle cx="20" cy="21" r="1"></circle>
-                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                            </svg>
-                            <span data-feather="shopping-cart"></span>
-                            Товары
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('admin.user_managment.user.index')}}">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                 stroke-linejoin="round" class="feather feather-users">
-                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                                <circle cx="9" cy="7" r="4"></circle>
-                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                            </svg>
-                            <span data-feather="users"></span>
-                            Пользователи
+                            <span data-feather="file"></span>
+                            Шукають відео
                         </a>
                     </li>
 
+                    @can('user-edit')
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('admin.user_managment.user.index')}}">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="feather feather-users">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
+                                <span data-feather="users"></span>
+                                Пользователи
+                            </a>
+                        </li>
+                    @endcan
+                    @can('role-edit')
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('admin.user_managment.roles.index')}}">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="feather feather-users">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
+                                <span data-feather="users"></span>
+                                Роли
+                            </a>
+                        </li>
+                    @endcan
                 </ul>
 
                 <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">

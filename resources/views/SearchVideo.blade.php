@@ -67,7 +67,7 @@
                                 </div>
                                 <div class="one-three more-filter">
                                     <ul class="unstyled">
-                                        <li class="current"><a href="#" class="title">More Fillter <i
+                                        <li class="current"><a href="#" class="title">Більше фільтрів <i
                                                     class="fa fa-angle-right"></i></a>
                                             <ul class="unstyled">
                                                 <li class="en">
@@ -105,7 +105,7 @@
                                 </div>
                                 <div class="one-three sortby">
                                     <ul class="unstyled">
-                                        <li class="current"><a href="#" class="title">Sort by: Random <i
+                                        <li class="current"><a href="#" class="title">Сортувати: Віпидково <i
                                                     class="fa fa-angle-right"></i></a>
                                             <ul class="unstyled">
                                                 <li class="en"><a href="#" title=""><i class="fa fa-caret-right"></i>Open
@@ -134,16 +134,19 @@
 
                                 <div class="flat-product clearfix">
                                     <div class="featured-product">
-                                        <img src="images/services/l1.jpg" alt="image">
+                                        <img src="https://maps.googleapis.com/maps/api/staticmap?zoom=9&size=300x150&maptype=roadmap
+&markers=color:red%7Clabel:S%7C{{$product->lat ?? 0}},{{$product->lng ?? 0}}&key=AIzaSyBUrGc3fA_1Atz-Nw8ZdHJrzq8ou61TvxU"
+                                             alt="image">
                                         <div class="time">
-                                            Now Close
+                                            Новий
                                         </div>
                                     </div>
                                     <div class="rate-product">
                                         <div class="link-review clearfix">
                                             <div class="button-product float-left">
-                                                <button type="button" class="flat-button" onclick="location.href='#'">
-                                                    Restautrant
+                                                <button type="button" class="flat-button">
+                                                    @if($product->city){{$product->city}}
+                                                    & {{$product->country}}  @else{{$product->region}} @endif
                                                 </button>
                                             </div>
                                             <div class="start-review">
@@ -154,7 +157,7 @@
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                             </span>
-                                                <a href="#" class="review">( 2 reviewers )</a>
+                                                <a href="#" class="review">( 2 перегляди )</a>
                                             </div>
                                         </div>
                                         <div class="info-product">
@@ -171,13 +174,8 @@
                             @endforeach
                         </div>
                         <div class="blog-pagination style2 text-center">
-                            <ul class="flat-pagination clearfix">
-                                <li class="active"><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li class="next">
-                                    <a href="#">Next</a>
-                                </li>
+                            <ul class="pagination pull-right">
+                                {{$products->links()}}
                             </ul><!-- /.flat-pagination -->
                         </div><!-- /.blog-pagination -->
                     </div><!-- /.col-lg-9 -->
@@ -185,17 +183,17 @@
                         <div class="sidebar">
                             <div class=" widget widget-form style2">
                                 <h5 class="widget-title">
-                                    Search Box
+                                    Пошуковий бокс
                                 </h5>
                                 <form novalidate="" class="filter-form clearfix" id="filter-form" method="post"
                                       action="#">
                                     <p class="book-notes">
-                                        <input type="text" placeholder="What are you looking for?" name="question"
+                                        <input type="text" placeholder="Укажіть місце пошуку" name="question"
                                                required="">
                                     </p>
                                     <p class="book-form-select icon">
                                         <select class=" dropdown_sort">
-                                            <option value="">All Categories</option>
+                                            <option value="">Категорія</option>
                                             <option value="">Hotel & travel</option>
                                             <option value="">Real Estate</option>
                                             <option value="">Restaurant</option>
@@ -206,10 +204,10 @@
                                         <i class="fa fa-angle-down"></i>
                                     </p>
                                     <p class="book-form-address icon">
-                                        <input type="text" placeholder="Address" name="address" required="">
+                                        <input type="text" placeholder="Країну" name="address" required="">
                                         <i class="ion-android-locate"></i>
                                     </p>
-                                    <p class="location">Location <i class="ion-location float-right"></i></p>
+                                    <p class="location">Радіус <i class="ion-location float-right"></i></p>
                                     <p class="input-location form-filter">
                                     <span class="filter">
                                         <input id="ex8" data-slider-id='ex1Slider' type="text" data-slider-min="0"
@@ -217,14 +215,14 @@
                                     </span>
                                     </p>
                                     <p class="form-submit text-center">
-                                        <button class="flat-button">Search <i class="ion-ios-search-strong"></i>
+                                        <button class="flat-button">Знайти <i class="ion-ios-search-strong"></i>
                                         </button>
                                     </p>
                                 </form>
                             </div>
                             <div class="widget widget-map">
-                                <h5 class="widget-title">Map</h5>
-                                <p>Lorem Ipsum ist ein einfacher Demo-Text für die Print- und Schriftindustrie.</p>
+                                <h5 class="widget-title">Карта</h5>
+                                <p>Можливо тут буде карта з цими координатами.</p>
                                 <div class="flat-maps">
                                     <div class="maps" style="width: 100%; height: 359px; "></div>
                                 </div>

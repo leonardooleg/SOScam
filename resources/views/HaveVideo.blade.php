@@ -179,8 +179,9 @@
                                             <div class="rate-product">
                                                 <div class="link-review clearfix">
                                                     <div class="button-product float-left">
-                                                        <button type="button" class="flat-button"
-                                                                onclick="location.href='#'">bar & coffe
+                                                        <button type="button" class="flat-button">
+                                                            @if($product->city){{$product->city}}
+                                                            & {{$product->country}}  @else{{$product->region}} @endif
                                                         </button>
                                                     </div>
                                                 </div>
@@ -209,13 +210,8 @@
 
                         </div>
                         <div class="blog-pagination style2 text-center">
-                            <ul class="flat-pagination clearfix">
-                                <li class="active"><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li class="next">
-                                    <a href="#">Next</a>
-                                </li>
+                            <ul class="pagination pull-right">
+                                {{$products->links()}}
                             </ul><!-- /.flat-pagination -->
                         </div><!-- /.blog-pagination -->
                     </div><!-- /.col-lg-12 -->

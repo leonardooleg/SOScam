@@ -15,7 +15,7 @@
 
 <label for=""><strong>Теги (укажіть для швидшого пошуку) *через кому</strong></label>
 <input type="text" class="form-control" name="tags" id="tags"
-       @if(isset($video))  value="@foreach($video->tags as $tag){{$tag->name ?? ''}}, @endforeach" @endif>
+       @if(isset($video))    value="@foreach($video->tags as $tag){{$tag->name ?? ''}}, @endforeach" @endif>
 
 
 <label for=""><strong>Slug (уникальное значение)</strong></label>
@@ -34,12 +34,14 @@
         <label for=""><strong>Дата</strong></label>
         <input type="date" class="form-control" name="date" value="{{$video->date ?? ""}}" required>
     </div>
+    <div class="col-2">
+        <label for=""><strong>Час</strong></label>
+        <input type="time" class="form-control" name="time" value="{{$video->time ?? ""}}">
+    </div>
 </div>
-
-
+<hr/>
+<label for="basic-url"><strong>Медіа файли</strong></label>
 @if (isset($medias)!='')
-    <hr/>
-    <label for="basic-url"><strong>Медіа файли</strong></label>
     @foreach($medias as $media)
         @if (isset($media)  )
             <div class="row">
@@ -100,16 +102,28 @@
 <hr/>
 
 <div id="coordinates">
-    Натисніть будь-де на карті. Або перетащіть маркер на місце аварії.
+    <p>Для того, чтобы выделить нужную область (создать окружность):</p>
+
+    <ol>
+        <li>Укажите её центр (первый клик по карте). Появится маркер.</li>
+        <li>Задайте радиус. Кликните по точке, которая должна быть на границе окружности (второй клик по карте).</li>
+    </ol>
 </div>
+
+<div id="my_map" style="width:100%;height:400px"></div>
+<hr/>
 <div>
     <label>
         Широта
-        <input type="text" name="lat" id="lat"/>
+        <input type="text" name="lat" id="lat" value="{{$video->lat ?? 50.45127}}"/>
     </label>
     <label>
         Довгота
-        <input type="text" name="lng" id="lng"/>
+        <input type="text" name="lng" id="lng" value="{{$video->lng ?? 50.45127}}"/>
+    </label>
+    <label>
+        Радіус
+        <input type="text" name="radius" id="radius" value="{{$video->radius ?? 50}}"/>
     </label>
     <label>
         Населений пункт
@@ -124,11 +138,72 @@
         <input type="text" name="country" id="country"/>
     </label>
 </div>
-<div id="map"></div>
 <script>
-    function updateCoordinates(lat, lng) {
+    var map, circle, circleOptions, setCenter, marker;
+
+    function initialize() {
+        var myLatlng = new google.maps.LatLng({{$video->lat ?? 0}}, {{$video->lng ?? 0}}); //Kiev
+        var myOptions = {
+            zoom: 9,
+            center: myLatlng,
+            mapTypeId: google.maps.MapTypeId.HYBRID
+        };
+        map = new google.maps.Map(document.getElementById("my_map"), myOptions);
+
+        setCenter = true;
+
+        circleOptions = {
+            fillColor: "#00AAFF",
+            fillOpacity: 0.5,
+            strokeColor: "#FFAA00",
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+            clickable: false,
+            center: myLatlng,
+            radius: {{$video->radius ?? 50000}},
+        };
+        /*виводити дані які вже є*/
+        circle = new google.maps.Circle(circleOptions);
+        circle.setMap(map);
+        marker = new google.maps.Marker({
+            position: myLatlng,
+        });
+        marker.setMap(map);
+        /*виводити дані які вже є*/
+
+        google.maps.event.addListener(map, 'click', function (event) {
+            if (setCenter) {
+                if (marker != undefined) {
+                    marker.setMap(null);
+                }
+                marker = new google.maps.Marker({
+                    position: event.latLng,
+                    clickable: false
+                });
+                marker.setMap(map);
+                circleOptions.center = event.latLng;
+                setCenter = false;
+            } else {
+                //СЂР°СЃСЃС‡РёС‚С‹РІР°РµРј СЂР°СЃСЃС‚РѕСЏРЅРёРµ РјРµР¶РґСѓ С‚РѕС‡РєР°РјРё
+                var radius = distHaversine(circleOptions.center, event.latLng);
+                circleOptions.radius = radius * 1000;
+                if (circle != undefined) {
+                    circle.setMap(null);
+                }
+                circle = new google.maps.Circle(circleOptions);
+                circle.setMap(map);
+                setCenter = true;
+                updateCoordinates(event.latLng.lat(), event.latLng.lng(), circleOptions.radius); //заповнення полів
+
+
+            }
+        });
+    }
+
+    function updateCoordinates(lat, lng, radius) {
         document.getElementById('lat').value = lat;
         document.getElementById('lng').value = lng;
+        document.getElementById('radius').value = radius;
         /*Міто*/
         new google.maps.Geocoder().geocode({
             'latLng': new google.maps.LatLng(lat, lng)
@@ -165,41 +240,34 @@
         /*Міто*/
     }
 
-    var position;
-
-    function initMap() {
-        console.log('initMap');
-        var map, marker;
-        var myLatlng = {
-            lat: {{$video->lat ?? 49.58}},
-            lng: {{$video->lng ?? 34.55}}
-        };
-        document.getElementById('lat').value = myLatlng.lat;
-        document.getElementById('lng').value = myLatlng.lng;
-
-        map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 7,
-            center: myLatlng
-        });
-
-        marker = new google.maps.Marker({
-            position: myLatlng,
-            map: map,
-            draggable: true
-        });
-
-        marker.addListener('dragend', function (e) {
-            var position = marker.getPosition();
-            updateCoordinates(position.lat(), position.lng())
-        });
-
-        map.addListener('click', function (e) {
-            marker.setPosition(e.latLng);
-            updateCoordinates(e.latLng.lat(), e.latLng.lng())
-        });
-
-        map.panTo(myLatlng);
+    function loadScript() {
+        var script = document.createElement("script");
+        script.src = "http://maps.googleapis.com/maps/api/js?v=3&amp;sensor=false&key=AIzaSyBUrGc3fA_1Atz-Nw8ZdHJrzq8ou61TvxU&callback=initialize";
+        document.body.appendChild(script);
     }
+
+    //http://stackoverflow.com/questions/1502590/calculate-distance-between-two-points-in-google-maps-v3
+    rad = function (x) {
+        return x * Math.PI / 180;
+    };
+
+    distHaversine = function (p1, p2) {
+        var R = 6371; // earth's mean radius in km
+        var dLat = rad(p2.lat() - p1.lat());
+        var dLong = rad(p2.lng() - p1.lng());
+
+        var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+            Math.cos(rad(p1.lat())) * Math.cos(rad(p2.lat())) * Math.sin(dLong / 2) * Math.sin(dLong / 2);
+        var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+        var d = R * c;
+
+        return d.toFixed(3);
+    };
+
+    window.onload = loadScript;
+    document.getElementById('city').value = "{{$video->city ?? ''}}";
+    document.getElementById('country').value = "{{$video->country ?? ''}}";
+    document.getElementById('region').value = "{{$video->region ?? ''}}";
 </script>
 
 
@@ -220,7 +288,5 @@
 <input class="btn btn-primary" type="submit" style="position: absolute;" value="Сохранить">
 
 
-<script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUrGc3fA_1Atz-Nw8ZdHJrzq8ou61TvxU&libraries=places&callback=initMap"
-    async defer></script>
+
 

@@ -9,7 +9,7 @@ class HaveVideoController extends Controller
 {
     public function index()
     {
-        $products = HaveVideo::all();
+        $products = HaveVideo::paginate(30);//потрібно картинки додати
         return view('HaveVideo')->with(['products' => $products]);
 
     }

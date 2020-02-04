@@ -20,6 +20,8 @@
 <input type="password" class="form-control" name="password">
 <label for=""><strong>Пароль еще раз</strong></label>
 <input type="password" class="form-control" name="password_confirmation">
+<label for=""><strong>Роль</strong></label>
+{{ Form::select('roles[]', $roles,$userRole, array('class' => 'form-control','multiple')) }}
 <hr/>
 <hr/>
 

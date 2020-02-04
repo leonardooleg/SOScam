@@ -2,27 +2,46 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d93835aa-b4ea-417f-94e3-6120bf019319" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/config/tagging.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/youtubeAPIConfig.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2014_01_07_073615_create_tagged_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2014_01_07_073615_create_tags_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2016_06_29_073615_create_tag_groups_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2016_06_29_073615_update_tags_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2017_09_07_194030_create_youtube_access_tokens_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/googlebdc942d095af2758.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/js/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SearchVideoController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserManagment/RoleController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/permission.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/search-video/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/search-video/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/search-video/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/search-video/partials/form.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/user_managment/roles/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/user_managment/roles/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/user_managment/roles/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/user_managment/users/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/HaveVideoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/HaveVideoController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserManagment/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserManagment/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HaveVideoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HaveVideoController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SearchVideoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SearchVideoController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/HaveVideo.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/HaveVideo.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/SearchVideo.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/SearchVideo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/youtubeAPIConfig.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/youtubeAPIConfig.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2017_09_07_194030_create_youtube_access_tokens_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2017_09_07_194030_create_youtube_access_tokens_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/stylesheets/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/stylesheets/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/HaveVideo.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/HaveVideo.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/SearchVideo.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/SearchVideo.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/ShowHaveVideo.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/ShowHaveVideo.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/ShowSearchVideo.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/ShowSearchVideo.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/have-video/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/have-video/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/have-video/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/have-video/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/have-video/partials/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/have-video/partials/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/app_admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/app_admin.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/user_managment/users/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/user_managment/users/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/user_managment/users/partials/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/user_managment/users/partials/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/footer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/newsletter.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/newsletter.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -229,58 +248,62 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="552" y="49" key="CommitChangelistDialog2/0.0.1858.1080@0.0.1858.1080" timestamp="1580209784024" />
+    <state x="92" y="92" width="1674" height="896" key="DiffContextDialog" timestamp="1580848038518">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state x="92" y="92" width="1674" height="896" key="DiffContextDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1580848038518" />
     <state x="709" y="295" key="FileChooserDialogImpl" timestamp="1580138577963">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="709" y="295" key="FileChooserDialogImpl/0.0.1858.1080@0.0.1858.1080" timestamp="1580138577963" />
-    <state width="1859" height="410" key="GridCell.Tab.0.bottom" timestamp="1580328461752">
+    <state width="1815" height="345" key="GridCell.Tab.0.bottom" timestamp="1580849380666">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1859" height="410" key="GridCell.Tab.0.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1580328461752" />
-    <state width="1859" height="410" key="GridCell.Tab.0.center" timestamp="1580328461752">
+    <state width="1815" height="345" key="GridCell.Tab.0.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1580849380666" />
+    <state width="1815" height="345" key="GridCell.Tab.0.center" timestamp="1580849380665">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1859" height="410" key="GridCell.Tab.0.center/0.0.1858.1080@0.0.1858.1080" timestamp="1580328461752" />
-    <state width="1859" height="410" key="GridCell.Tab.0.left" timestamp="1580328461751">
+    <state width="1815" height="345" key="GridCell.Tab.0.center/0.0.1858.1080@0.0.1858.1080" timestamp="1580849380665" />
+    <state width="1815" height="345" key="GridCell.Tab.0.left" timestamp="1580849380665">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1859" height="410" key="GridCell.Tab.0.left/0.0.1858.1080@0.0.1858.1080" timestamp="1580328461751" />
-    <state width="1859" height="410" key="GridCell.Tab.0.right" timestamp="1580328461752">
+    <state width="1815" height="345" key="GridCell.Tab.0.left/0.0.1858.1080@0.0.1858.1080" timestamp="1580849380665" />
+    <state width="1815" height="345" key="GridCell.Tab.0.right" timestamp="1580849380665">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1859" height="410" key="GridCell.Tab.0.right/0.0.1858.1080@0.0.1858.1080" timestamp="1580328461752" />
-    <state width="1859" height="410" key="GridCell.Tab.1.bottom" timestamp="1580328461752">
+    <state width="1815" height="345" key="GridCell.Tab.0.right/0.0.1858.1080@0.0.1858.1080" timestamp="1580849380665" />
+    <state width="1815" height="345" key="GridCell.Tab.1.bottom" timestamp="1580849380666">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1859" height="410" key="GridCell.Tab.1.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1580328461752" />
-    <state width="1859" height="410" key="GridCell.Tab.1.center" timestamp="1580328461752">
+    <state width="1815" height="345" key="GridCell.Tab.1.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1580849380666" />
+    <state width="1815" height="345" key="GridCell.Tab.1.center" timestamp="1580849380666">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1859" height="410" key="GridCell.Tab.1.center/0.0.1858.1080@0.0.1858.1080" timestamp="1580328461752" />
-    <state width="1859" height="410" key="GridCell.Tab.1.left" timestamp="1580328461752">
+    <state width="1815" height="345" key="GridCell.Tab.1.center/0.0.1858.1080@0.0.1858.1080" timestamp="1580849380666" />
+    <state width="1815" height="345" key="GridCell.Tab.1.left" timestamp="1580849380666">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1859" height="410" key="GridCell.Tab.1.left/0.0.1858.1080@0.0.1858.1080" timestamp="1580328461752" />
-    <state width="1859" height="410" key="GridCell.Tab.1.right" timestamp="1580328461752">
+    <state width="1815" height="345" key="GridCell.Tab.1.left/0.0.1858.1080@0.0.1858.1080" timestamp="1580849380666" />
+    <state width="1815" height="345" key="GridCell.Tab.1.right" timestamp="1580849380666">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1859" height="410" key="GridCell.Tab.1.right/0.0.1858.1080@0.0.1858.1080" timestamp="1580328461752" />
-    <state width="1859" height="410" key="GridCell.Tab.2.bottom" timestamp="1580328461753">
+    <state width="1815" height="345" key="GridCell.Tab.1.right/0.0.1858.1080@0.0.1858.1080" timestamp="1580849380666" />
+    <state width="1815" height="345" key="GridCell.Tab.2.bottom" timestamp="1580849380666">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1859" height="410" key="GridCell.Tab.2.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1580328461753" />
-    <state width="1859" height="410" key="GridCell.Tab.2.center" timestamp="1580328461753">
+    <state width="1815" height="345" key="GridCell.Tab.2.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1580849380666" />
+    <state width="1815" height="345" key="GridCell.Tab.2.center" timestamp="1580849380666">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1859" height="410" key="GridCell.Tab.2.center/0.0.1858.1080@0.0.1858.1080" timestamp="1580328461753" />
-    <state width="1859" height="410" key="GridCell.Tab.2.left" timestamp="1580328461752">
+    <state width="1815" height="345" key="GridCell.Tab.2.center/0.0.1858.1080@0.0.1858.1080" timestamp="1580849380666" />
+    <state width="1815" height="345" key="GridCell.Tab.2.left" timestamp="1580849380666">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1859" height="410" key="GridCell.Tab.2.left/0.0.1858.1080@0.0.1858.1080" timestamp="1580328461752" />
-    <state width="1859" height="410" key="GridCell.Tab.2.right" timestamp="1580328461753">
+    <state width="1815" height="345" key="GridCell.Tab.2.left/0.0.1858.1080@0.0.1858.1080" timestamp="1580849380666" />
+    <state width="1815" height="345" key="GridCell.Tab.2.right" timestamp="1580849380666">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1859" height="410" key="GridCell.Tab.2.right/0.0.1858.1080@0.0.1858.1080" timestamp="1580328461753" />
+    <state width="1815" height="345" key="GridCell.Tab.2.right/0.0.1858.1080@0.0.1858.1080" timestamp="1580849380666" />
     <state x="763" y="460" key="NewPhpFileDialog" timestamp="1579167772005">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
@@ -297,10 +320,14 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="521" y="269" key="Vcs.Push.Dialog.v2/0.0.1858.1080@0.0.1858.1080" timestamp="1580209790992" />
-    <state x="92" y="92" width="1674" height="896" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1580326340811">
+    <state x="44" y="131" width="1674" height="896" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1580848847384">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="92" y="92" width="1674" height="896" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1580326340811" />
+    <state x="44" y="131" width="1674" height="896" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1580848847384" />
+    <state x="92" y="92" width="1674" height="896" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1580849025588">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state x="92" y="92" width="1674" height="896" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1580849025588" />
     <state x="615" y="256" width="627" height="568" key="find.popup" timestamp="1580328352169">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
@@ -309,5 +336,12 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="592" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1858.1080@0.0.1858.1080" timestamp="1580211506138" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="index.php">
+        <watch expression="$user-&gt;password" language="PHP" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

@@ -40,11 +40,14 @@
                 <div>
                     <div id="map"></div>
                     <script>
+                        var marker;
+
                         function initMap() {
                             // Styles a map in night mode.
+                            var myLatlng = new google.maps.LatLng({{$video->lat ?? 0}}, {{$video->lng ?? 0}});
                             var map = new google.maps.Map(document.getElementById('map'), {
-                                center: {lat: {{$video->lat ?? 49.58}}, lng: {{$video->lng ?? 34.55}}},
-                                zoom: 12,
+                                center: myLatlng,
+                                zoom: 10,
                                 styles: [
                                     {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
                                     {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
@@ -126,6 +129,11 @@
                                     }
                                 ]
                             });
+
+                            marker = new google.maps.Marker({
+                                position: myLatlng,
+                            });
+                            marker.setMap(map);
                         }
 
                     </script>

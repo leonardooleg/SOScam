@@ -18,6 +18,7 @@
             <thead>
             <th>Имя</th>
             <th>Email</th>
+            <th>Роль</th>
 
             <th class="text-right">Изменить</th>
             </thead>
@@ -27,7 +28,16 @@
                     <td><a href="{{route('admin.user_managment.user.edit', $user)}}">{{$user->name}}</a></td>
                     <td>{{ $user->email}}</td>
                     <td>
-                        <a href="{{route('admin.user_managment.user.edit', $user)}}"><i class="fa fa-edit"></i></a>
+                        @if(!empty($user->getRoleNames()))
+                            @foreach($user->getRoleNames() as $v)
+                                <label class="badge badge-success">{{ $v }}</label>
+                            @endforeach
+                        @endif
+                    </td>
+                    <td>
+                        <a class="btn btn-info" href="{{ route('admin.user_managment.user.show',$user->id) }}">Show</a>
+                        <a class="btn btn-primary" href="{{route('admin.user_managment.user.edit', $user)}}"><i
+                                class="fa fa-edit"></i></a>
                     </td>
                 </tr>
             @empty

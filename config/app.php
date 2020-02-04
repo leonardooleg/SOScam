@@ -178,6 +178,8 @@ return [
         /*MY*/
         Conner\Tagging\Providers\TaggingServiceProvider::class,
         ad\Youtube\YoutubeAPIServiceProvider::class,
+        Spatie\Permission\PermissionServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
     ],
 
     /*
@@ -230,6 +232,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         /*MY*/
         'YoutubeAPI' => ad\Youtube\Facades\YoutubeAPI::class,
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
     ],
 
 ];
