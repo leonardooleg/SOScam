@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth']], function () {
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['permission:admin']], function () {
     Route::get('/', 'DashboardController@dashboard')->name('admin.index');
     Route::resource('/have-video', 'HaveVideoController', ['as' => 'admin']);
     Route::resource('/search-video', 'SearchVideoController', ['as' => 'admin']);
@@ -22,9 +22,11 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
 });
 
 Route::get('/', 'WelcomeController@index')->name('welcome');
+/*Route::get('/home', 'HomeController@index')->name('home');*/
 
-Route::get('/greeting', 'WelcomeController@greeting')->name('greeting');
-
+Route::get('home', function () {
+    return redirect('/');
+});
 
 Route::get('/have-video', 'HaveVideoController@index')->name('HaveVideo');
 Route::get('/search-video', 'SearchVideoController@index')->name('SearchVideo');
@@ -32,13 +34,11 @@ Route::get('/search-video', 'SearchVideoController@index')->name('SearchVideo');
 Route::get('/have-video/{slug?}', 'HaveVideoController@video')->name('ShowHaveVideo');
 Route::get('/search-video/{slug?}', 'SearchVideoController@video')->name('ShowSearchVideo');
 
-Route::get('/greeting', 'WelcomeController@greeting')->name('greeting');
-
-
-Route::get('/sos-cam', 'SOSController@sos')->name('SOScam');
-Route::get('/have-sos-cam', 'SOSController@have')->name('haveSOScam');
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['prefix' => 'panel', 'middleware' => ['permission:witness']], function () {
+    Route::get('/', 'SOSController@index');
+    Route::get('/sos-cam', 'SOSController@sos')->name('SOScam');
+    Route::get('/have-soscam', 'SOSController@have')->name('haveSOScam');
+});
 
 /*DB::listen(function($query) {
     var_dump($query->sql, $query->bindings);

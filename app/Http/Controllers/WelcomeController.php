@@ -14,9 +14,4 @@ class WelcomeController extends Controller
         $SearchVideos = SearchVideo::latest()->limit(3)->get();
         return view('welcome')->with(['HaveVideos' => $HaveVideos, 'SearchVideos' => $SearchVideos]);
     }
-
-    public function greeting()
-    {
-        return view('greeting');
-    }
 }

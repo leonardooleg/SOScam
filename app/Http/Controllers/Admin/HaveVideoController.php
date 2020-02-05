@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use ad\Youtube\YoutubeAPI;
 use App\Http\Controllers\Controller;
 use App\Models\HaveVideo;
 use App\Models\MediaLib;
@@ -10,10 +11,12 @@ use DB;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class HaveVideoController extends Controller
 {
+
     public function __construct()
     {
         $this->middleware('permission:admin', ['only' => ['index', 'show', 'create', 'edit', 'update', 'store', 'destroy']]);
@@ -131,6 +134,7 @@ class HaveVideoController extends Controller
      * @param Request $request
      * @param HaveVideo $HaveVideo
      * @return Response
+     * @throws Exception
      */
     public function update(Request $request, HaveVideo $HaveVideo)
     {
@@ -151,6 +155,37 @@ class HaveVideoController extends Controller
                     ['have_videos_id' => $HaveVideo->id, 'link' => $data, 'type' => 1]
                 );
             }
+        }
+
+        $video_file = $request->file('video_file');
+        if ($video_file) {
+            $fullPathToVideo = $video_file->store('uploads/HaveVideo/upload', 'public');
+
+
+            $url = Storage::url($fullPathToVideo, 'public');
+            $url = Storage::path($fullPathToVideo, 'public');
+            $url = str_replace("/", "\\", $url);
+            $url = str_replace("app\\", "app\public\\", $url);
+            /*$params = [
+                'title'       => 'My Awesome Video',
+                'description' => 'You can also specify your video description here.',
+                'tags'	      => ['foo', 'bar', 'baz'],
+                'category_id' => 10
+            ];*/
+
+            $fc = YoutubeAPI::upload($url, [
+                'title' => 'My Awesome Video',
+                'description' => 'You can also specify your video description here.',
+                'tags' => ['foo', 'bar', 'baz'],
+                'category_id' => 10
+            ]);
+
+            $video = $fc->getVideoId();
+
+
+            $insert_media = MediaLib::updateOrCreate(
+                ['have_videos_id' => $HaveVideo->id, 'link' => $video->getVideoId(), 'type' => 2]
+            );
         }
 
         if ($request->media_video != '') {

@@ -87,8 +87,15 @@
     </div>
 </div>
 <hr/>
+<label for="basic-url"><strong>Завантажити відеофайл</strong></label>
+<div class="input-group mb-3 hdtuto increment">
+    <div class="custom-file">
+        <input type="file" name="video_file" class="custom-file-input myfrm" placeholder="Выбирете файл">
+        <label class="custom-file-label" for="inputGroupFile03">Выбирете файл</label>
+    </div>
+</div>
 
-<label for="basic-url"><strong>Дополнительные видео</strong></label>
+<label for="basic-url"><strong>Посилання на Youtube-відео</strong></label>
 <div class="input-group mb-3 hdtuto2 increment2">
     <div class="custom-file">
         <input type="text" class="form-control" name="media_video[]" placeholder="Посилання на відео">

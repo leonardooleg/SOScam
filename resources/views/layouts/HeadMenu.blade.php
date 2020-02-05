@@ -21,15 +21,22 @@
                             <li><a href="/have-video">Відео ДТП</a></li>
                             <li><a href="/search-video">Допоможіть знайти очевидця</a></li>
                             <li><a href="page-about.html">Про проект</a></li>
-
                             <li>
-                                <a data-toggle="modal" href="#popup_login"><i class="fa fa-user"></i> Ввійти</a>
+                                @if (Route::has('login'))
+                                    @auth
+                                        <a href="/panel"><i class="fa fa-user"></i> Кабінет</a>
+                                    @else
+
+                                        <a data-toggle="modal" href="#popup_login"><i class="fa fa-user"></i> Ввійти</a>
+
+                                    @endauth
+                                @endif
                             </li>
                         </ul><!-- /.menu -->
                     </nav><!-- /.mainnav -->
 
                     <div class="button-addlist float-right">
-                        <button type="button" class="flat-button" onclick="location.href='page-addlisting.html'">Додати
+                        <button type="button" class="flat-button" onclick="location.href='/panel/have-soscam'">Додати
                             ДТП
                         </button>
                     </div>

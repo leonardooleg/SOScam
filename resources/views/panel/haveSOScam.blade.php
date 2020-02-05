@@ -59,21 +59,29 @@
             </div><!-- /.container -->
         </div><!-- /.page-title -->
 
-        <section class="flat-row flat-note bg-red">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <p>Вам потрібно бути залогіненим</p>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="note-button float-right">
-                            <a data-toggle="modal" href="#popup_login" class="flat-button">Залогінитись / Пройти швидку
-                                реєсрацію</a>
+        @if (Route::has('login'))
+            @auth
+
+            @else
+                <section class="flat-row flat-note bg-red">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <p>Вам потрібно бути залогіненим</p>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="note-button float-right">
+                                    <a data-toggle="modal" href="#popup_login" class="flat-button">Залогінитись / Пройти
+                                        швидку
+                                        реєсрацію</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
+                </section>
+            @endauth
+        @endif
+
 
         <section class="flat-row page-addlisting">
             <div class="container">
@@ -320,78 +328,6 @@
         </section>
 
         @include('layouts.footer')
-
-        <div class="modal fade flat-popupform" id="popup_login">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    </div>
-                    <div class="modal-body text-center clearfix">
-                        <form class="form-login form-listing" action="#" method="post">
-                            <h3 class="title-formlogin">Log in</h3>
-                            <span class="input-login icon-form"><input type="text" placeholder="Your Name*" name="email"
-                                                                       required="required"><i
-                                    class="fa fa-user"></i></span>
-                            <span class="input-login icon-form"><input type="text" placeholder="Password*"
-                                                                       name="password" required="required"><i
-                                    class="fa fa-lock"></i></span>
-                            <div class="flat-fogot clearfix">
-                                <label class="float-left">
-                               <span class="input-check">
-                                    <input type="checkbox" name="check" value="0" checked="">
-                                    <span class="remember">Remember me</span>
-                                </span>
-                                </label>
-                                <label class="float-right link-register">
-                                    <a href="#">Lost your password?</a>
-                                </label>
-                            </div>
-                            <span class="wrap-button">
-                            <button type="button" id="login-button" class=" login-btn effect-button" title="log in">LOG IN</button>
-                        </span>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="modal fade flat-popupform" id="popup_register">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    </div>
-                    <div class="modal-body text-center clearfix">
-                        <form class="form-login form-listing" action="#" method="post">
-                            <h3 class="title-formlogin">Sign Up</h3>
-                            <span class="input-login icon-form"><input type="text" placeholder="Your Name*" name="name"
-                                                                       required="required"><i
-                                    class="fa fa-user"></i></span>
-                            <span class="input-login icon-form"><input type="text" placeholder="E-mail*" name="email"
-                                                                       required="required"><i
-                                    class="fa fa-envelope-o"></i></span>
-                            <span class="input-login icon-form"><input type="text" placeholder="Password*"
-                                                                       name="password" required="required"><i
-                                    class="fa fa-lock"></i></span>
-                            <span class="input-login icon-form"><input type="text" placeholder="Repeat Password*"
-                                                                       name="password" required="required"><i
-                                    class="fa fa-lock"></i></span>
-                            <div class="wrap-button signup">
-                                <button type="button" id="logup-button" class=" login-btn effect-button" title="log in">
-                                    LOG UP
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Go Top -->
-        <a class="go-top effect-button">
-            <i class="fa fa-angle-up"></i>
-        </a>
-
-    </div>
 
     <!-- Javascript -->
     <script src="/javascript/jquery.min.js"></script>
