@@ -348,13 +348,13 @@ input[type="color"],
 .navbar .nav > .active > a,
 .navbar .nav > .active > a:hover,
 .navbar .nav > .active > a:focus {
-	-webkit-appearance: none;
-	text-shadow: none;
-	-webkit-box-shadow: none;
-	   -moz-box-shadow: none;
-	     -o-box-shadow: none;
-	        box-shadow: none;
-	color: #b1b1b1;
+    -webkit-appearance: none;
+    text-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -o-box-shadow: none;
+    box-shadow: none;
+    color: #000000;
 }
 
 h1, h2, h3, h4, h5, h6 { font-family: "Nunito", sans-serif; color: #333333; font-weight: 600; margin-bottom: 20px; }
@@ -1771,8 +1771,8 @@ section.main-content.page-listing {
 }
 
 .page-listing .widget .widget-title::before {
-	background-color: #F7F7F7;
-	height: 2px;
+    background-color: #efecec;
+    height: 2px;
 }
 
 .sidebar .widget.widget_listing {
@@ -1780,7 +1780,7 @@ section.main-content.page-listing {
 }
 
 .sidebar .widget.widget_listing ul li {
-	border-bottom: 1px solid #f7f7f7;
+    border-bottom: 1px solid #eaeaea;
 }
 
 .sidebar .widget.widget_listing ul li:last-child {
@@ -1836,12 +1836,12 @@ section.main-content.page-listing {
 }
 
 .sidebar .widget.widget-contact ul li:before {
-	position: absolute;
-	left: 0;
-	top: 0;
-	font-size: 20px;
-	content: "\f1ff";
-	font-family: "Ionicons";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 25px;
+    content: "\f44c";
+    font-family: "Ionicons";
 }
 
 .sidebar .widget.widget-contact ul li.email:before {
@@ -1871,7 +1871,7 @@ section.main-content.page-listing {
 /* Page Listing Full
 -------------------------------------------------------------- */
 .flat-row.section-filter {
-    padding: 83px 0px 50px;
+    padding: 50px 0px 50px;
 }
 
 .section-filter .widget-form .filter-form p select,
@@ -2122,7 +2122,11 @@ section.main-content.page-listing {
 }
 
 .profile ul.add-section li.youtube span, .profile ul.add-section li i.youtube {
-	color: #e8280b;
+    color: #e8280b;
+}
+
+.profile ul.add-section li.instagram span, .profile ul.add-section li i.instagram {
+    color: #e8280b;
 }
 
 .profile ul.add-section {
@@ -2494,11 +2498,11 @@ section.main-content.page-listing {
 }
 
 .widget .widget-title::before {
-	left: 0;
-	bottom: 0;
-	width: 40px;
-	height: 4px;
-	background-color: #e8280b;
+    left: 0;
+    bottom: 0;
+    width: 80px;
+    height: 4px;
+    background-color: #e8280b;
 }
 
 /* Widget categories */
@@ -2940,6 +2944,14 @@ img.head_have_photo {
     height: 256px;
 }
 
+/*Гловна сторінка*/
+/*Пошук*/
+.search-form button:focus {
+    outline: unset;
+}
+
+/*Пошук*/
+/*Гловна сторінка*/
 
 /*Google maps*/
 /*Пошук выдео*/
@@ -2948,3 +2960,83 @@ img.head_have_photo {
 }
 
 /*Пошук выдео*/
+/*ШАпка*/
+
+.button-addlist.float-right .dropdown-item {
+    display: block;
+    width: 100%;
+    padding: 10px 1.5rem;
+}
+
+.button-addlist.float-right button:focus {
+    outline: 0px dotted;
+    outline: 0px auto -webkit-focus-ring-color;
+}
+
+.button-addlist.float-right .dropdown-item:focus, .dropdown-item:hover {
+    color: #fff;
+    text-decoration: none;
+    background-color: #e8280b;
+}
+
+/*ШАпка*/
+/*Сторінка юзера*/
+.page-user .flat-tabs.style2 ul.menu-tab li {
+    width: unset;
+    padding-right: 50px;
+}
+
+/*Сторінка юзера*/
+/*Юзер додавання/редагування*/
+.wrap-accadion .card {
+    border: unset;
+    background-color: #efefef;
+}
+
+svg.my_del_x {
+    position: absolute;
+    right: 2px;
+}
+
+.wrap-accadion .load_img_card.col.mb-4 {
+    height: 120px;
+    width: 100%;
+
+}
+
+.wrap-accadion .card-img-top {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    width: auto;
+    height: 120px;
+}
+
+/*Юзер додавання/редагування*/
+
+/*Відео ДТП*/
+.h-video {
+    height: 200px;
+    width: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button:focus {
+    outline: none;
+}
+
+/*Відео ДТП*/
+
+/*Шукаю очевидця*/
+.featured-post {
+    margin-bottom: 25px;
+}
+
+#datetimepicker1 ::placeholder {
+    color: #fff;
+
+}
+
+/*Шукаю очевидця*/

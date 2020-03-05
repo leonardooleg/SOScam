@@ -63,71 +63,24 @@
                         <div class="flat-select clearfix">
                             <div class="float-left width50 clearfix">
                                 <div class="one-three showing">
-                                    <p><span>16</span> Запитів на допомогу</p>
+                                    <p><span>{{ count($products)}}</span> Запитів на допомогу</p>
                                 </div>
                                 <div class="one-three more-filter">
                                     <ul class="unstyled">
-                                        <li class="current"><a href="#" class="title">Більше фільтрів <i
+                                        <li class="current"><a class="title">Фільтр <i
                                                     class="fa fa-angle-right"></i></a>
-                                            <ul class="unstyled">
-                                                <li class="en">
-                                                    <input type="checkbox" id="wifi" name="category">
-                                                    <label for="wifi">Wifi</label>
-                                                </li>
-                                                <li class="en">
-                                                    <input type="checkbox" id="smoking" name="category">
-                                                    <label for="smoking">Smoking allowed</label>
-                                                </li>
-                                                <li class="en">
-                                                    <input type="checkbox" id="onl" name="category">
-                                                    <label for="onl">Online Reservation</label>
-                                                </li>
-                                                <li class="en">
-                                                    <input type="checkbox" id="parking" name="category"
-                                                           checked="checked">
-                                                    <label for="parking">Parking street</label>
-                                                </li>
-                                                <li class="en">
-                                                    <input type="checkbox" id="event" name="category">
-                                                    <label for="event">Events</label>
-                                                </li>
-                                                <li class="en">
-                                                    <input type="checkbox" id="in" name="category" checked="checked">
-                                                    <label for="in">Elevator in building</label>
-                                                </li>
-                                                <li class="en">
-                                                    <input type="checkbox" id="card" name="category">
-                                                    <label for="card">Credit Card Payment</label>
-                                                </li>
-                                            </ul>
                                         </li>
                                     </ul>
                                 </div>
                                 <div class="one-three sortby">
                                     <ul class="unstyled">
-                                        <li class="current"><a href="#" class="title">Сортувати: Віпидково <i
+                                        <li class="current"><a class="title">Сортування: Останні спочатку <i
                                                     class="fa fa-angle-right"></i></a>
-                                            <ul class="unstyled">
-                                                <li class="en"><a href="#" title=""><i class="fa fa-caret-right"></i>Open
-                                                        Now</a></li>
-                                                <li class="en"><a href="#" title=""><i class="fa fa-caret-right"></i>Most
-                                                        reviewed</a></li>
-                                                <li class="en"><a href="#" title=""><i class="fa fa-caret-right"></i>Top
-                                                        rated</a></li>
-                                                <li class="en"><a href="#" title=""><i class="fa fa-caret-right"></i>Random</a>
-                                                </li>
-                                            </ul>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
-                            <div class="float-right">
-                                <div class="flat-sort">
-                                    <a href="listing-list.html" class="course-list-view active"><i
-                                            class="fa fa-list"></i></a>
-                                    <a href="listing-grid.html" class="course-grid-view "><i class="fa fa-th"></i></a>
-                                </div>
-                            </div>
+
                         </div>
                         <div class="listing-list">
                             @foreach($products as $product)
@@ -138,7 +91,7 @@
 &markers=color:red%7Clabel:S%7C{{$product->lat ?? 0}},{{$product->lng ?? 0}}&key=AIzaSyBUrGc3fA_1Atz-Nw8ZdHJrzq8ou61TvxU"
                                              alt="image">
                                         <div class="time">
-                                            Новий
+                                            @if($product->viewed >10) Топ відео @endif
                                         </div>
                                     </div>
                                     <div class="rate-product">
@@ -151,22 +104,29 @@
                                             </div>
                                             <div class="start-review">
                                             <span class="flat-start">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
+                                                @if($product->viewed >10)
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                @else
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                @endif
+
+
                                             </span>
-                                                <a href="#" class="review">( 2 перегляди )</a>
+                                                <a class="review">( {{$product->viewed}} перегляди )</a>
                                             </div>
                                         </div>
                                         <div class="info-product">
                                             <h6 class="title"><a
                                                     href="/search-video/{{$product->slug}}">{{$product->title}}</a></h6>
                                             <p>{{$product->maps}}</p>
-                                            <a href="#" class="heart">
-                                                <i class="ion-android-favorite-outline"></i>
-                                            </a>
+
                                         </div>
                                     </div>
                                 </div>
@@ -186,32 +146,20 @@
                                     Пошуковий бокс
                                 </h5>
                                 <form novalidate="" class="filter-form clearfix" id="filter-form" method="post"
-                                      action="#">
-                                    <p class="book-notes">
-                                        <input type="text" placeholder="Укажіть місце пошуку" name="question"
-                                               required="">
-                                    </p>
-                                    <p class="book-form-select icon">
-                                        <select class=" dropdown_sort">
-                                            <option value="">Категорія</option>
-                                            <option value="">Hotel & travel</option>
-                                            <option value="">Real Estate</option>
-                                            <option value="">Restaurant</option>
-                                            <option value="">Healthy & Fitness</option>
-                                            <option value="">Food and coffee</option>
-                                            <option value="">Drinks</option>
-                                        </select>
-                                        <i class="fa fa-angle-down"></i>
-                                    </p>
+                                      action="/search">
+                                    @csrf
+
+
                                     <p class="book-form-address icon">
-                                        <input type="text" placeholder="Країну" name="address" required="">
+                                        <input type="text" placeholder="Адреса" name="address" required="">
                                         <i class="ion-android-locate"></i>
                                     </p>
                                     <p class="location">Радіус <i class="ion-location float-right"></i></p>
                                     <p class="input-location form-filter">
                                     <span class="filter">
-                                        <input id="ex8" data-slider-id='ex1Slider' type="text" data-slider-min="0"
-                                               data-slider-max="10" data-slider-step="1" data-slider-value="5"/>
+                                        <input id="ex8" data-slider-id='ex1Slider' type="text" name="radius" type="text"
+                                               data-slider-min="0" data-slider-max="35"
+                                               data-slider-step="1" data-slider-value="10"/>
                                     </span>
                                     </p>
                                     <p class="form-submit text-center">
@@ -221,11 +169,11 @@
                                 </form>
                             </div>
                             <div class="widget widget-map">
-                                <h5 class="widget-title">Карта</h5>
+                                {{--<h5 class="widget-title">Карта</h5>
                                 <p>Можливо тут буде карта з цими координатами.</p>
                                 <div class="flat-maps">
                                     <div class="maps" style="width: 100%; height: 359px; "></div>
-                                </div>
+                                </div>--}}
                             </div>
                         </div><!-- /.sidebar -->
                     </div><!-- /.col-md-3 -->

@@ -18,3 +18,19 @@ $(document).ready(function () {
         $(this).parents('.hdtuto2').remove();
     });
 });
+
+$(document).ready(function () {
+    $("body").on("click", ".load_img .my_del_x", function (event) {
+        event.preventDefault();
+        $(this).parents('.load_img .load_img_card').remove();
+    });
+});
+
+$(document).ready(function () {
+    $(".add-images").click(function () {
+        $(".myfrm").change(function () {
+            var fileName = $(this).val().split("\\").pop();
+            $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+        });
+    });
+});

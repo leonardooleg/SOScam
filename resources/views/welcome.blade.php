@@ -29,7 +29,7 @@
     <!-- Preloader -->
     <section class="loading-overlay">
         <div class="Loading-Page">
-            <h2 class="loader">Loading</h2>
+            <h2 class="loader">Завантаження</h2>
         </div>
     </section>
 
@@ -122,28 +122,24 @@
         <div class="container">
             <div class="wrap-form">
                 <div class="flat-formsearch ">
-                    <form novalidate="" class="search-form form-filter clearfix" id="searchform" method="post"
-                          action="#">
-                <span class="input-question">
-                    <input type="text" placeholder="Укажіть місце" name="question" id="question">
-                </span>
-                        <span class="input-location">
-                    <input type="text" placeholder="Радіус" name="location" id="location">
-                    <span class="filter">
-                        <input id="ex8" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="10"
-                               data-slider-step="1" data-slider-value="5"/>
-                    </span>
-                </span>
-                        <span class="select">
-                    <select>
-                        <option>Всі відео</option>
-                        <option>Очевидець ДТП</option>
-                        <option>Шукають ДТП</option>
-                    </select>
-                </span>
-                        <span class="form-submit text-right">
-                    <button class="flat-button">Пошук <i class="ion-ios-search-strong"></i></button>
-                </span>
+                    <form novalidate="" class="search-form form-filter  row" id="searchform" method="post"
+                          action="/search">
+                        @csrf
+                        <span class="input-question col-md-4">
+                            <input type="text" placeholder="Ввести адресу" name="address" id="question">
+                        </span>
+                        <span class="input-location  col-md-4">
+                            <input type="text" placeholder="Радіус (км)" id="location" disabled>
+                            <span class="filter">
+                                <input id="ex8" data-slider-id='ex1Slider' name="radius" type="text" data-slider-min="0"
+                                       data-slider-max="35"
+                                       data-slider-step="1" data-slider-value="10"/>
+                            </span>
+                        </span>
+
+                        <span class=" text-right  col-md-3">
+                            <button class="flat-button">Пошук <i class="ion-ios-search-strong"></i></button>
+                        </span>
                     </form>
                 </div>
             </div>

@@ -177,9 +177,11 @@ return [
         App\Providers\RouteServiceProvider::class,
         /*MY*/
         Conner\Tagging\Providers\TaggingServiceProvider::class,
-        ad\Youtube\YoutubeAPIServiceProvider::class,
+        /*ad\Youtube\YoutubeAPIServiceProvider::class,*/
+        App\Providers\GoogleDriveServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
+        App\Providers\ComposerServiceProvider::class,
     ],
 
     /*
@@ -231,7 +233,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         /*MY*/
-        'YoutubeAPI' => ad\Youtube\Facades\YoutubeAPI::class,
+        /*'YoutubeAPI' => ad\Youtube\Facades\YoutubeAPI::class,*/
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
     ],

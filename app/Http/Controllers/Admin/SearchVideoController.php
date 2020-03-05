@@ -6,12 +6,10 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\MediaLib;
 use App\Models\SearchVideo;
-use Carbon\Carbon;
 use DB;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use Illuminate\Support\Str;
 
 /*use Illuminate\Http\Request;*/
 
@@ -56,45 +54,7 @@ class SearchVideoController extends Controller
      */
     public function store(Request $request)
     {
-        $SearchVideo = new SearchVideo();
-        $SearchVideo->title = $request->title;
-        $SearchVideo->published = $request->published;
-        $SearchVideo->slug = Str::slug(mb_substr($request->title, 0, 40) . "-" . Carbon::now()->format('dmyHi'), '-');
-        $SearchVideo->description_short = $request->description_short;
-        $SearchVideo->description = $request->description;
-        $SearchVideo->lat = $request->lat;
-        $SearchVideo->lng = $request->lng;
-        $SearchVideo->city = $request->city;
-        $SearchVideo->region = $request->region;
-        $SearchVideo->country = $request->country;
-        $SearchVideo->radius = $request->radius;
-        $SearchVideo->date = $request->date;
-        $SearchVideo->time = $request->time;
-        $SearchVideo->meta_title = $request->meta_title;
-        $SearchVideo->meta_description = $request->meta_description;
-        $SearchVideo->meta_keyword = $request->meta_keyword;
-        $SearchVideo->save();
-        // Now add tags
-        $SearchVideo->tag(explode(',', $request->tags));
-        $media_photo = $request->file('media_photo');
-        if ($media_photo) {
-            foreach ($request->file('media_photo') as $file) {
-                $data = "/" . $file->store('uploads/HaveVideo', 'public');
-                $insert_media = MediaLib::updateOrCreate(
-                    ['have_videos_id' => $SearchVideo->id, 'link' => $data, 'type' => 1, 'media' => 2]
-                );
-            }
-        }
-
-        if ($request->media_video != '') {
-            foreach ($request->media_video as $link) {
-                if ($link) {
-                    $insert_media = MediaLib::updateOrCreate(
-                        ['have_videos_id' => $SearchVideo->id, 'link' => $link, 'type' => 2, 'media' => 2]
-                    );
-                }
-            }
-        }
+        SearchVideo::videoStore($request);
         return redirect()->route('admin.search-video.index');
     }
 
@@ -134,53 +94,8 @@ class SearchVideoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $SearchVideo = SearchVideo::find($id);
-        /*$image = $request->file('media_photo');
-        if ($image){
-            $upload=$request->file('media_photo')->store('uploads/HaveVideo', 'public');
-            if ($upload){
-                $HaveVideo->image = $upload;
-            }
-        }*/
-        $media_photo = $request->file('media_photo');
-        if ($media_photo) {
-            foreach ($request->file('media_photo') as $file) {
-                $data = "/" . $file->store('uploads/HaveVideo', 'public');
-                $insert_media = MediaLib::updateOrCreate(
-                    ['have_videos_id' => $SearchVideo->id, 'link' => $data, 'type' => 1]
-                );
-            }
-        }
 
-        if ($request->media_video != '') {
-            foreach ($request->media_video as $link) {
-                if ($link) {
-                    $insert_media = MediaLib::updateOrCreate(
-                        ['have_videos_id' => $SearchVideo->id, 'link' => $link, 'type' => 2]
-                    );
-                }
-            }
-        }
-
-        // Now add tags
-        $SearchVideo->tag(explode(',', $request->tags));
-        $SearchVideo->published = $request->published;
-        $SearchVideo->title = $request->title;
-        $SearchVideo->description_short = $request->description_short;
-        $SearchVideo->description = $request->description;
-        $SearchVideo->lat = $request->lat;
-        $SearchVideo->lng = $request->lng;
-        $SearchVideo->city = $request->city;
-        $SearchVideo->region = $request->region;
-        $SearchVideo->country = $request->country;
-        $SearchVideo->radius = $request->radius;
-        $SearchVideo->date = $request->date;
-        $SearchVideo->time = $request->time;
-        $SearchVideo->meta_title = $request->meta_title;
-        $SearchVideo->meta_description = $request->meta_description;
-        $SearchVideo->meta_keyword = $request->meta_keyword;
-        $SearchVideo->save();
-
+        SearchVideo::videoUpdate($request, $id);
         return back()->with('success', 'Your article has been added successfully. Please wait for the admin to approve.');
     }
 

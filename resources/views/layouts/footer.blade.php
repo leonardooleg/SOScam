@@ -10,7 +10,7 @@
                             дорожньої події</p>
                     </div><!-- /.textwidget -->
                     <ul class="flat-infomation">
-                        <li><i class="fa fa-map-marker"></i>Якщо вам потрібна домомога із сайтом звертайтись
+                        <li><i class="fa fa-map-marker"></i>Якщо вам потрібна домомога із сайтом звертайтесь
                         </li>
                         <li><i class="fa fa-mail-forward"></i>help@soscam.net</li>
                     </ul>
@@ -19,12 +19,12 @@
 
             <div class="col-lg-3">
                 <div id="nav_menu-2" class="widget widget_nav_menu">
-                    <h5 class="widget-title">Privacy Policy</h5>
+                    <h5 class="widget-title">Корисні посилання</h5>
                     <div class="wrap-menufooter clearfix">
                         <ul class="menu one-half">
-                            <li class="menu-item"><a href="#">About Us</a></li>
+                            <li class="menu-item"><a href="#">Про нас</a></li>
                             <li class="menu-item"><a href="#">Advertise</a></li>
-                            <li class="menu-item"><a href="#">Terms & Ruler</a></li>
+                            <li class="menu-item"><a href="#">Правила & Обов'язки</a></li>
                             <li class="menu-item"><a href="#">Privacy Policy</a></li>
                             <li class="menu-item"><a href="#">FAQs</a></li>
                             <li class="menu-item"><a href="#">Events</a></li>

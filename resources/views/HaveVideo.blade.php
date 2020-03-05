@@ -57,41 +57,25 @@
 
         <section class="flat-row section-filter bg-theme">
             <div class="container widget widget-form style2">
-                <form novalidate="" class="filter-form row clearfix" id="filter-form" method="post" action="#">
-                    <div class="col-lg-8">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <p class="book-notes icon">
-                                    <input type="text" placeholder="Вкажіть місце пригоди" name="question" required="">
-                                    <i class="ion-ios-search-strong"></i>
-                                </p>
-                            </div>
-                            <div class="col-lg-6">
-                                <p class="book-form-select icon">
-                                    <select class=" dropdown_sort">
-                                        <option value="">Всі категорії</option>
-                                        <option value="">Наявні відео</option>
-                                        <option value="">Допоможіть знайти</option>
-                                    </select>
-                                    <i class="fa fa-angle-down"></i>
-                                </p>
-                            </div>
-                            <div class="col-lg-12">
-                                <p class="book-form-address icon">
-                                    <input type="text" placeholder="Адреса" name="address" required="">
-                                    <i class="ion-android-locate"></i>
-                                </p>
-                            </div>
-                        </div>
+                <form novalidate="" class="filter-form row clearfix" id="filter-form" method="post" action="/search">
+                    @csrf
+                    <div class="col-lg-6">
+                        <p class="book-form-address icon">
+                            <input type="text" name="address" placeholder="Адреса" name="address" required="">
+                            <i class="ion-android-locate"></i>
+                        </p>
                     </div>
                     <div class="col-lg-4">
                         <p class="location">Радіус <i class="ion-location float-right"></i></p>
                         <p class="input-location form-filter">
                         <span class="filter">
-                            <input id="ex8" data-slider-id='ex1Slider' type="text" data-slider-min="0"
-                                   data-slider-max="10" data-slider-step="1" data-slider-value="5"/>
+                            <input id="ex8" data-slider-id='ex1Slider' name="radius" type="text" data-slider-min="0"
+                                   data-slider-max="35" data-slider-step="1" data-slider-value="10"/>
                         </span>
                         </p>
+
+                    </div>
+                    <div class="col-lg-2">
                         <p class="form-submit text-center">
                             <button class="flat-button">Пошук</button>
                         </p>
@@ -108,60 +92,19 @@
                         <div class="flat-select clearfix">
                             <div class="float-left width50 clearfix">
                                 <div class="one-three showing">
-                                    <p><span>16</span> наявних відео</p>
+                                    <p><span>{{ count($products)}}</span> завантажених відео </p>
                                 </div>
                                 <div class="one-three more-filter">
                                     <ul class="unstyled">
-                                        <li class="current"><a href="#" class="title">Розширений фільтр <i
+                                        <li class="current"><a class="title"> Фільтр <i
                                                     class="fa fa-angle-right"></i></a>
-                                            <ul class="unstyled">
-                                                <li class="en">
-                                                    <input type="checkbox" id="wifi" name="category">
-                                                    <label for="wifi">Wifi</label>
-                                                </li>
-                                                <li class="en">
-                                                    <input type="checkbox" id="smoking" name="category">
-                                                    <label for="smoking">Smoking allowed</label>
-                                                </li>
-                                                <li class="en">
-                                                    <input type="checkbox" id="onl" name="category">
-                                                    <label for="onl">Online Reservation</label>
-                                                </li>
-                                                <li class="en">
-                                                    <input type="checkbox" id="parking" name="category"
-                                                           checked="checked">
-                                                    <label for="parking">Parking street</label>
-                                                </li>
-                                                <li class="en">
-                                                    <input type="checkbox" id="event" name="category">
-                                                    <label for="event">Events</label>
-                                                </li>
-                                                <li class="en">
-                                                    <input type="checkbox" id="in" name="category" checked="checked">
-                                                    <label for="in">Elevator in building</label>
-                                                </li>
-                                                <li class="en">
-                                                    <input type="checkbox" id="card" name="category">
-                                                    <label for="card">Credit Card Payment</label>
-                                                </li>
-                                            </ul>
                                         </li>
                                     </ul>
                                 </div>
                                 <div class="one-three sortby">
                                     <ul class="unstyled">
-                                        <li class="current"><a href="#" class="title">Сортувати: Випадково <i
+                                        <li class="current"><a class="title">Сортування: Останні спочатку <i
                                                     class="fa fa-angle-right"></i></a>
-                                            <ul class="unstyled">
-                                                <li class="en"><a href="#" title=""><i class="fa fa-caret-right"></i>Open
-                                                        Now</a></li>
-                                                <li class="en"><a href="#" title=""><i class="fa fa-caret-right"></i>Most
-                                                        reviewed</a></li>
-                                                <li class="en"><a href="#" title=""><i class="fa fa-caret-right"></i>Top
-                                                        rated</a></li>
-                                                <li class="en"><a href="#" title=""><i class="fa fa-caret-right"></i>Random</a>
-                                                </li>
-                                            </ul>
                                         </li>
                                     </ul>
                                 </div>
@@ -172,9 +115,11 @@
                                 @foreach($products as $product)
                                     <div class="flat-product">
                                         <div class="featured-product">
-                                            <img src="images/services/1.jpg" alt="image">
+                                            <a href="/have-video/{{$product->slug}}"> <img
+                                                    src="https://drive.google.com/thumbnail?id={{$product->link}}&sz=w360-h237"
+                                                    alt="image" class="h-video"></a>
                                             <div class="time bg-green">
-                                                Топ відео
+                                                @if($product->viewed >10) Топ відео @endif
                                             </div>
                                             <div class="rate-product">
                                                 <div class="link-review clearfix">
@@ -189,16 +134,14 @@
                                                     <h6 class="title"><a
                                                             href="/have-video/{{$product->slug}}">{{$product->title}}</a>
                                                     </h6>
-                                                    <p>{{$product->maps}}</p>
-                                                    <a href="#" class="heart">
-                                                        <i class="ion-android-favorite-outline"></i>
-                                                    </a>
+
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="content-product">
-                                            <div class="tm">
-                                                TM
+                                            <div class="tm"
+                                                 style="background-color:@if($product->viewed <10) #f1c407 @elseif($product->viewed >30) #18ba60 @else #e8280b @endif ;">
+                                                ОП
                                             </div>
                                             <div class="text">
                                                 <p>{{$product->description_short}}</p>

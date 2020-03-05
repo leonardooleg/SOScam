@@ -36,9 +36,20 @@
                     </nav><!-- /.mainnav -->
 
                     <div class="button-addlist float-right">
-                        <button type="button" class="flat-button" onclick="location.href='/panel/have-soscam'">Додати
-                            ДТП
-                        </button>
+                        <div class="dropdown">
+                            <button class="dropdown-toggle flat-button" type="button" id="dropdownMenuButton"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Додати
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item font-weight-bold" href="/panel/have-soscam">Додати ДТП</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item font-weight-bold" href="/panel/search-soscam">Знайти
+                                    очевидця</a>
+                            </div>
+                        </div>
+
+
                     </div>
                 </div><!-- /.nav-wrap -->
             </div><!-- /.col-lg-8 -->

@@ -171,15 +171,15 @@
                                     <ul class="slides">
                                         @foreach($photo as $photo_one)
                                             <li>
-                                                @if($photo_one->type==1) <img @else
+                                                @if($photo_one->kind==2) <img @else
                                                     <iframe
-                                                        @endif @if($photo_one->type==1) src="{{asset('/storage/'. $photo_one->link ?? '') }}"
+                                                        @endif @if($photo_one->kind==2) src="https://drive.google.com/uc?id={{ $photo_one->link ?? ''}}"
                                                         style="width:auto; height:450px;"
-                                                        @else src="{{$photo_one->link ?? '' }}"
+                                                        @else src="https://drive.google.com/file/d/{{$photo_one->link ?? '' }}/preview?autoplay=0"
                                                         @endif  class="head_have_photo" width="100%" height="450px"
-                                                        @if($photo_one->type==2)  frameborder="0"
-                                                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                                        allowfullscreen @endif>@if($photo_one->type==2) </iframe> @endif
+                                                        @if($photo_one->kind==3)  frameborder="0"
+                                                        allow="accelerometer; muted ; encrypted-media; gyroscope; picture-in-picture"
+                                                        allowfullscreen @endif>@if($photo_one->kind==3) </iframe> @endif
                                             </li>
                                         @endforeach
                                     </ul>
@@ -190,10 +190,10 @@
                                         @foreach($photo as $photo_one)
                                             <li>
                                                 <img
-                                                    @if($photo_one->type==1) src="{{asset('/storage/'. $photo_one->link ?? '') }}"
+                                                    @if($photo_one->kind==2) src="https://drive.google.com/thumbnail?id={{$photo_one->link}}&sz=w210-h110"
                                                     @else src="{{asset('/storage/uploads/youtube.jpg' ?? '' )}}"
-                                                    @endif  width="100%" height="450px"
-                                                    style="width:100%; height:200px;" class="head_have_photo">
+                                                    @endif  style="width:auto; height:100px"
+                                                    style="" class="head_have_photo">
                                             </li>
                                         @endforeach
                                     </ul>
@@ -212,7 +212,7 @@
                                                 <i class="ion-ios-star"></i>
                                                 <i class="ion-ios-star"></i>
                                             </span>
-                                                <span class="like"> ( 3 reviewers )</span>
+                                                <span class="like"> ( {{$video->viewed}} reviewers )</span>
                                             </div>
                                         </li>
                                         <li>

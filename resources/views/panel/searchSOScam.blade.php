@@ -45,13 +45,13 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="page-title-heading">
-                            <h1 class="title">Додати відео ДТП</h1>
+                            <h1 class="title">Подати запит на допомогу пошуку очевидця ДТП</h1>
                         </div><!-- /.page-title-captions -->
                         <div class="breadcrumbs">
                             <ul>
                                 <li><a href="/">Головна</a></li>
                                 <li> -</li>
-                                <li>Додати відео дорожньо-транспортної пригоди</li>
+                                <li>Додати запит-пошук дорожньо-транспортної пригоди</li>
                             </ul>
                         </div><!-- /.breadcrumbs -->
                     </div><!-- /.col-md-12 -->
@@ -85,12 +85,12 @@
 
         <section class="flat-row page-addlisting">
             <div class="container">
-                <form class="form-horizontal" @if(isset($video->id))action="/panel/have-soscam/{{$video->id}}"
-                      @else action="/panel/have-soscam" @endif method="post"
+                <form class="form-horizontal" @if(isset($video->id))action="/panel/search-soscam/{{$video->id}}"
+                      @else action="/panel/search-soscam" @endif method="post"
                       enctype="multipart/form-data">
                     {{ csrf_field() }}
                     {{-- Form include --}}
-                    @include('panel.partials.haveForm')
+                    @include('panel.partials.searchForm')
                     <input type="hidden" name="created_by" value="{{Auth::id()}}">
                 </form>
             </div>

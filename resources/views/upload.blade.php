@@ -85,13 +85,12 @@
 
         <section class="flat-row page-addlisting">
             <div class="container">
-                <form class="form-horizontal" @if(isset($video->id))action="/panel/have-soscam/{{$video->id}}"
-                      @else action="/panel/have-soscam" @endif method="post"
+                <form class="form-horizontal" action="/drive/upload" method="post"
                       enctype="multipart/form-data">
                     {{ csrf_field() }}
-                    {{-- Form include --}}
-                    @include('panel.partials.haveForm')
+                    <input type="file" name="upload">
                     <input type="hidden" name="created_by" value="{{Auth::id()}}">
+                    <button type="submit"></button>
                 </form>
             </div>
         </section>

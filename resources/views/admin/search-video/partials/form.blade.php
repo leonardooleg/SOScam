@@ -15,7 +15,7 @@
 
 <label for=""><strong>Теги (укажіть для швидшого пошуку) *через кому</strong></label>
 <input type="text" class="form-control" name="tags" id="tags"
-       @if(isset($video))    value="@foreach($video->tags as $tag){{$tag->name ?? ''}}, @endforeach" @endif>
+       @if(isset($video))    value="{{  $video->tags->pluck('name')->implode(", ")  ?? '' }}" @endif>
 
 
 <label for=""><strong>Slug (уникальное значение)</strong></label>
@@ -42,25 +42,44 @@
 <hr/>
 <label for="basic-url"><strong>Медіа файли</strong></label>
 @if (isset($medias)!='')
-    @foreach($medias as $media)
-        @if (isset($media)  )
-            <div class="row">
-                <div class="col-md-4">
-                    @if($media->type==1) <img @else
-                        <iframe @endif @if($media->type==1) src="{{asset('/storage/'. $media->link ?? '') }}"
-                                @else src="{{$media->link ?? '' }}" @endif   width="100%"
-                                @if($media->type==2) frameborder="0"
-                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen @endif>@if($media->type==2) </iframe> @endif
+    <div class="wrap-accadion load_img row row-cols-1 row-cols-md-3">
+        @foreach($medias as $media)
+            @if (isset($media)  )
+                <div class="load_img_card col mb-4">
+                    <div class="card h-100">
+                        @if($media->type==1)
+                            <a target="_blank" href="{{asset('/storage'. $media->link ?? '') }}"> <img
+                                    src="{{asset('/storage'. $media->link ?? '') }}" class="card-img-top"></a>
+                            <svg type="submit" class="my_del_x" xmlns="http://www.w3.org/2000/svg"
+                                 xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false"
+                                 width="2em" height="2em"
+                                 style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);"
+                                 preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                                <path
+                                    d="M9 7h2l1 2.5L13 7h2l-2 5l2 5h-2l-1-2.5l-1 2.5H9l2-5l-2-5M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2m0 2v14h14V5H5z"
+                                    fill="#ff0000"/>
+                            </svg>
+                            <input type="text" name="photo[]" value="{{$media->link ?? ''}}" hidden class="hidden">
+                        @else
+                            <iframe src="https://www.youtube.com/embed/{{$media->link ?? '' }}" frameborder="0"
+                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen class="card-img-top"></iframe>
+                            <svg class="my_del_x" xmlns="http://www.w3.org/2000/svg"
+                                 xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false"
+                                 width="2em" height="2em"
+                                 style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);"
+                                 preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                                <path
+                                    d="M9 7h2l1 2.5L13 7h2l-2 5l2 5h-2l-1-2.5l-1 2.5H9l2-5l-2-5M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2m0 2v14h14V5H5z"
+                                    fill="#ff0000"/>
+                            </svg>
+                            <input type="text" name="video[]" value="{{$media->link ?? ''}}" hidden class="hidden">
+                        @endif
+                    </div>
                 </div>
-                <div class="col-md-8">
-                    <input type="text" class="form-control" @if($media->type==1) name="media_photo[]"
-                           @else name="media_video[]" @endif  placeholder="посилання на фото"
-                           value="{{$media->link ?? ""}}">
-                </div>
-            </div>
-        @endif
-    @endforeach
+            @endif
+        @endforeach
+    </div>
 @endif
 <hr/>
 

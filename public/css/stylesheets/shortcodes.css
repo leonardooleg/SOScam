@@ -46,7 +46,8 @@
 
 .one-three {
     float: left;
-   /* width: 25%;*/
+    /* width: 25%;*/
+    margin-right: 10px;
 }
 
 /* Flat button
@@ -514,7 +515,6 @@ section.flat-row.section-product {
 .listing-list .flat-product .rate-product .flat-button {
     box-shadow: 0 0 0 2px #E8280B;
     padding: 10px 7px 7px 9px;
-    width: 113px;
 }
 
 .listing-list .flat-product .rate-product .flat-button:hover {
@@ -900,9 +900,11 @@ section.flat-row.section-product {
 }
 
 .listing-user .listing-list .flat-product .rate-product {
-    float: left;
-    overflow: visible;
-    width: 44%;
+    /* float: left;
+     overflow: visible;
+     width: 44%;*/
+    overflow: hidden;
+    padding: 29px 20px 29px 10px;
 }
 
 .listing-user ul.wrap-button {

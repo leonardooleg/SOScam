@@ -541,3 +541,29 @@ section.card-product.product__top-block {
 
 
 /*Google maps*/
+/* додавання/редагування*/
+.wrap-accadion .card {
+    border: unset;
+    background-color: #efefef;
+}
+
+svg.my_del_x {
+    position: absolute;
+    right: 2px;
+}
+
+.wrap-accadion .load_img_card.col.mb-4 {
+    height: 120px;
+    width: 100%;
+
+}
+
+.wrap-accadion .card-img-top {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    width: auto;
+    height: 120px;
+}
+
+/* додавання/редагування*/
